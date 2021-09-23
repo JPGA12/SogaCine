@@ -1,7 +1,7 @@
 package co.edu.uptc.logica.modelo;
 
 public class Persona {
-    private String Nombre, Numero, Contraseña, Sexo;
+    private String Nombre, Numero, Contraseña, Email;
 
     public String getNombre() {
         return Nombre;
@@ -27,11 +27,11 @@ public class Persona {
         Contraseña = contraseña;
     }
 
-    public String getSexo() {
-        return Sexo;
+    public String getEmail() {
+        return Email;
     }
 
-    public void setSexo(String sexo) {
-        Sexo = sexo;
+    public void setEmail(String email) {
+        Email = email;
     }
 }
