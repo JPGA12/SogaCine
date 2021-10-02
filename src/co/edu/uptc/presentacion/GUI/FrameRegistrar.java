@@ -1,4 +1,4 @@
-package co.edu.uptc.presentacion;
+package co.edu.uptc.presentacion.GUI;
 
 import co.edu.uptc.utilidades.TextPrompt;
 
