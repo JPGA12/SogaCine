@@ -12,10 +12,10 @@ public class Menu {
     }
 
     Scanner sc = new Scanner(System.in);
+    private int op=0;
 
     public void Inicio() {
         System.out.println("SogaCine");
-        int op=0;
 
         while (op!= 2){
             System.out.println("| 1 | Registrarse");
@@ -26,23 +26,7 @@ public class Menu {
                     CrearCuenta();
                     break;
                 case 2:
-                    System.out.println("Ingrese su Email");
-                    String Email=sc.next();
-                    if(r.VerificacionEmail(Email)!=null){
-                        System.out.println("Ingrese su contraseña");
-                        String Contraseña= sc.next();
-                        if (r.VerificacionContra(Contraseña)!=null){
-                            System.out.println("\n==== BIENVENIDO ====");
-                        }else {
-                            System.out.println("Error: Contraseña Incorrecta");
-                            op=0;
-                        }
-                    }else {
-                        System.out.println("Error: Cuenta no encontrada");
-                        op=0;
-                    }
-                    //login();
-                    //MostrarCuenta();
+                    Login();
                     break;
                 default:
                     break;
@@ -160,16 +144,16 @@ public class Menu {
         r.CrearPersona(Nombre,Numero,Email,Contraseña);
         System.out.println("Su cuenta se creo correctamente");
     }
-    public void MostrarCuenta(){
+    /*public void MostrarCuenta(){
         for (int i=0;i<r.getListaPersonas().size();i++){
             System.out.println("\n"+r.getListaPersonas().get(i).getNombre());
             System.out.println(r.getListaPersonas().get(i).getNumero());
             System.out.println(r.getListaPersonas().get(i).getEmail());
             System.out.println(r.getListaPersonas().get(i).getContraseña());
         }
-    }
+    }*/
 
-    /*private void login(){
+    private void Login(){
         System.out.println("Ingrese su Email");
         String Email=sc.next();
         if(r.VerificacionEmail(Email)!=null){
@@ -179,8 +163,11 @@ public class Menu {
                 System.out.println("\n==== BIENVENIDO ====");
             }else {
                 System.out.println("Error: Contraseña Incorrecta");
-
+                op=0;
             }
+        }else {
+            System.out.println("Error: Cuenta no encontrada");
+            op=0;
         }
-    }*/
+    }
 }
