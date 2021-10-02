@@ -12,7 +12,7 @@ public class DAOPersonas {
     // Set
     public void guardarPersona(Persona p) {
 
-        new Archivo().AgregarContenido(RUTA, p.getNombre() + "," + p.getNumero() + "," + p.getEmail() + "," + p.getContraseña());
+        new Archivo().AgregarContenido(RUTA, p.getApellido() + "," + p.getTelefono() + "," + p.getEmail() + "," + p.getContraseña());
 
     }
 
@@ -29,8 +29,8 @@ public class DAOPersonas {
             // Separo cada linea de datos en atributos
             String Linea[] = datos.get(i).split(",");
 
-            p.setNombre(Linea[0]);
-            p.setNumero(Linea[1]);
+            p.setApellido(Linea[0]);
+            p.setTelefono(Linea[1]);
             p.setEmail(Linea[2]);
             p.setContraseña(Linea[3].replace(";",""));
 

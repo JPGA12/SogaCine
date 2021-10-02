@@ -14,7 +14,7 @@ public class Registro {
     public void CrearPersona(String UserName, String Telefono, String Email, String Contraseña) {
 
         Persona p = new Persona();
-        p.setUserName(UserName);
+        p.setApellido(UserName);
         p.setTelefono(Telefono);
         p.setEmail(Email);
         p.setContraseña(Contraseña);

@@ -40,66 +40,70 @@ public class FrameRegistrar extends JFrame implements ActionListener {
 
         //Datos de ususario
         JTextField nombreU = new JTextField();
-        nombreU.setBounds(68, 50, 280, 35);
+        nombreU.setBounds(70, 150, 280, 40);
         nombreU.setFont(new Font("arial", Font.ITALIC, 15));
         panel.add(nombreU);
         JLabel nombre = new JLabel();
         nombre = new TextPrompt("Nombre", nombreU);
 
-        JLabel iconoContacto = new JLabel(new ImageIcon("imagenes/contactoIcon.png"));
-        iconoContacto.setBounds(22, 53, 48, 30);
+        JLabel iconoContacto = new JLabel(new ImageIcon("imagenes/IconPersona.png"));
+        iconoContacto.setBounds(30, 150, 40, 40);
         panel.add(iconoContacto);
 
 
         JTextField apellidoU = new JTextField();
-        apellidoU.setBounds(68, 105, 280, 35);
+        apellidoU.setBounds(70, 200, 280, 40);
         apellidoU.setFont(new Font("arial", Font.ITALIC, 15));
         panel.add(apellidoU);
         JLabel apellido = new JLabel();
         nombre = new TextPrompt("Apellido", apellidoU);
 
-        JLabel iconoContactoA = new JLabel(new ImageIcon("imagenes/contactoIcon.png"));
-        iconoContactoA.setBounds(22, 108, 48, 30);
+        JLabel iconoContactoA = new JLabel(new ImageIcon("imagenes/IconPersona.png"));
+        iconoContactoA.setBounds(30, 200, 40, 40);
         panel.add(iconoContactoA);
 
 
         JTextField correoU = new JTextField();
-        correoU.setBounds(68, 160, 280, 35);
+        correoU.setBounds(70, 250, 280, 40);
         correoU.setFont(new Font("arial", Font.ITALIC, 15));
         panel.add(correoU);
         JLabel correo = new JLabel();
         correo = new TextPrompt("Email", correoU);
 
-        JLabel iconoEmail = new JLabel(new ImageIcon("imagenes/correoIcon.png"));
-        iconoEmail.setBounds(25, 160, 48, 30);
+        JLabel iconoEmail = new JLabel(new ImageIcon("imagenes/IconEmail.png"));
+        iconoEmail.setBounds(30, 250, 40, 40);
         panel.add(iconoEmail);
 
 
         JPasswordField contraseñaU = new JPasswordField();
-        contraseñaU.setBounds(68, 215, 280, 35);
+        contraseñaU.setBounds(70, 300, 280, 40);
         contraseñaU.setFont(new Font("arial", Font.ITALIC, 15));
         panel.add(contraseñaU);
         JLabel contraseña = new JLabel();
         contraseña = new TextPrompt("Contraseña", contraseñaU);
 
+        JLabel ContraseñaIcon = new JLabel(new ImageIcon("imagenes/IconPassword.png"));
+        ContraseñaIcon.setBounds(30, 300, 40, 40);
+        panel.add(ContraseñaIcon);
+
         JTextField telefonoU = new JTextField();
-        telefonoU.setBounds(68, 270, 280, 35);
+        telefonoU.setBounds(70, 350, 280, 40);
         telefonoU.setFont(new Font("arial", Font.ITALIC, 15));
         panel.add(telefonoU);
         JLabel telefono = new JLabel();
         telefono = new TextPrompt("Telefono", telefonoU);
 
-        JLabel telefonoIcon = new JLabel(new ImageIcon("imagenes/telefonoIcon.png"));
-        telefonoIcon.setBounds(25, 268, 40, 40);
+        JLabel telefonoIcon = new JLabel(new ImageIcon("imagenes/PhoneIcon.png"));
+        telefonoIcon.setBounds(30, 350, 40, 40);
         panel.add(telefonoIcon);
 
-        JLabel fechaDeNacimiento = new JLabel();
+        /*JLabel fechaDeNacimiento = new JLabel();
         fechaDeNacimiento.setText("FECHA DE NACIMIENTO: ");
         fechaDeNacimiento.setFont(new Font("arial", Font.ITALIC, 15));
         fechaDeNacimiento.setBounds(110, 325, 200, 30);
         panel.add(fechaDeNacimiento);
 
-        JTextField fechaDeNacimientoU = new JTextField();
+        TextField fechaDeNacimientoU = new JTextField();
         fechaDeNacimientoU.setBounds(130, 360, 125, 30);
         fechaDeNacimientoU.setFont(new Font("arial", Font.ITALIC, 15));
         panel.add(fechaDeNacimientoU);
@@ -119,7 +123,7 @@ public class FrameRegistrar extends JFrame implements ActionListener {
             public void actionPerformed(ActionEvent e) {
                 sexoEnviar[0] = jComboBox.getSelectedItem().toString();
             }
-        });
+        });*/
 
 
         //Botones de Usuario
@@ -138,11 +142,10 @@ public class FrameRegistrar extends JFrame implements ActionListener {
                 String correo = correoU.getText();
                 String contraseña = contraseñaU.getText();
                 String telefono = telefonoU.getText();
-                String fechaDeNacimiento = fechaDeNacimientoU.getText();
-                String sexo = sexoEnviar[0];
+                //String fechaDeNacimiento = fechaDeNacimientoU.getText();
+                //String sexo = sexoEnviar[0];
 
-                if (nombre.isEmpty() || apellido.isEmpty() || correo.isEmpty() ||
-                        contraseña.isEmpty() || contraseña.isEmpty() || telefono.isEmpty() || fechaDeNacimiento.isEmpty()) {
+                if (nombre.isEmpty() || apellido.isEmpty() || correo.isEmpty() ||contraseña.isEmpty() || contraseña.isEmpty() || telefono.isEmpty()) {
                     System.err.println("Por favor llene todos los campos");
                 } else {
                    /* operacionPersona.guardarpersona(nombre, apellido

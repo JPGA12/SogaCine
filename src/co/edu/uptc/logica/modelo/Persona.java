@@ -1,14 +1,14 @@
 package co.edu.uptc.logica.modelo;
 
 public class Persona {
-    private String Nombre, Numero, Contraseña, Email;
+    private String Nombre, Apellido, Telefono, Contraseña, Email;
 
-    public String getUserName() {
-        return UserName;
+    public String getApellido() {
+        return Apellido;
     }
 
-    public void setUserName(String userName) {
-        UserName = userName;
+    public void setApellido(String apellido) {
+        Apellido = apellido;
     }
 
     public String getTelefono() {
