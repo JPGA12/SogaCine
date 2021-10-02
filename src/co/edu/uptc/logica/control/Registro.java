@@ -11,11 +11,11 @@ public class Registro {
     public Registro(){
         ListaPersonas = new DAOPersonas().mostrarDatosPersonas();
     }
-    public void CrearPersona(String Nombre, String Numero, String Email, String Contraseña) {
+    public void CrearPersona(String UserName, String Telefono, String Email, String Contraseña) {
 
         Persona p = new Persona();
-        p.setNombre(Nombre);
-        p.setNumero(Numero);
+        p.setUserName(UserName);
+        p.setTelefono(Telefono);
         p.setEmail(Email);
         p.setContraseña(Contraseña);
 

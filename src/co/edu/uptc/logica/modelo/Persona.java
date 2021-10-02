@@ -3,20 +3,20 @@ package co.edu.uptc.logica.modelo;
 public class Persona {
     private String Nombre, Numero, Contraseña, Email;
 
-    public String getNombre() {
-        return Nombre;
+    public String getUserName() {
+        return UserName;
     }
 
-    public void setNombre(String nombre) {
-        Nombre = nombre;
+    public void setUserName(String userName) {
+        UserName = userName;
     }
 
-    public String getNumero() {
-        return Numero;
+    public String getTelefono() {
+        return Telefono;
     }
 
-    public void setNumero(String numero) {
-        Numero = numero;
+    public void setTelefono(String telefono) {
+        Telefono = telefono;
     }
 
     public String getContraseña() {
@@ -33,5 +33,13 @@ public class Persona {
 
     public void setEmail(String email) {
         Email = email;
+    }
+
+    public String getNombre() {
+        return Nombre;
+    }
+
+    public void setNombre(String nombre) {
+        Nombre = nombre;
     }
 }

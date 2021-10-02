@@ -132,16 +132,16 @@ public class Menu {
         return precio;
     }
     private void CrearCuenta(){
-        System.out.println("Por favor digite su Nombre");
-        String Nombre=sc.next();
-        System.out.println("Por favor digite su Numero");
-        String Numero=sc.next();
+        System.out.println("Por favor digite su Username:");
+        String UserName=sc.next();
+        System.out.println("Por favor digite su Telefono");
+        String Telefono=sc.next();
         System.out.println("Ingrese su Correo");
         String Email=sc.next();
         System.out.println("Ingrese la Contraseña");
         String Contraseña=sc.next();
 
-        r.CrearPersona(Nombre,Numero,Email,Contraseña);
+        r.CrearPersona(UserName,Telefono,Email,Contraseña);
         System.out.println("Su cuenta se creo correctamente");
     }
     /*public void MostrarCuenta(){
