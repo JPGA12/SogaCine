@@ -33,7 +33,7 @@ public class FrameCartelera extends JFrame implements ActionListener{
         JButton Boton1 = new JButton();
         Boton1.setBounds(40,170,150,200);
         ImageIcon icon1 = new ImageIcon("imagenes/1.png");
-        Boton1.setIcon(new ImageIcon(icon1.getImage().getScaledInstance(Boton1.getWidth(), Boton1.getHeight(),Image.SCALE_SMOOTH)));
+        Boton1.setIcon(new ImageIcon(icon1.getImage().getScaledInstance(Boton1.getWidth(), Boton1.getHeight(),Image.SCALE_FAST)));
         panel.add(Boton1);
 
         JButton boton2 = new JButton();
