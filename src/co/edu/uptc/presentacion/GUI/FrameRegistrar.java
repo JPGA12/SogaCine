@@ -1,4 +1,4 @@
-package co.edu.uptc.presentacion;
+package co.edu.uptc.presentacion.GUI;
 
 import co.edu.uptc.utilidades.TextPrompt;
 
@@ -10,7 +10,6 @@ import java.awt.event.ActionListener;
 public class FrameRegistrar extends JFrame implements ActionListener {
 
     private JPanel panel;
-    private JLabel mensaje;
     private JTextField cajaDeTexto;
     private JPasswordField passwordField;
     private TextPrompt textPrompt;
