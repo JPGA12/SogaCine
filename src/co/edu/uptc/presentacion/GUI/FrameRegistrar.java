@@ -1,5 +1,6 @@
 package co.edu.uptc.presentacion.GUI;
 
+import co.edu.uptc.logica.control.Registro;
 import co.edu.uptc.utilidades.TextPrompt;
 
 import javax.swing.*;
@@ -10,9 +11,11 @@ import java.awt.event.ActionListener;
 public class FrameRegistrar extends JFrame implements ActionListener {
 
     private JPanel panel;
-    private JTextField cajaDeTexto;
-    private JPasswordField passwordField;
-    private TextPrompt textPrompt;
+    private JTextField nombreU, apellidoU,correoU,telefonoU;
+    private JPasswordField contraseñaU;
+    private JButton registrar, volver;
+
+    private Registro registro;
 
 
     public FrameRegistrar() {
@@ -42,7 +45,7 @@ public class FrameRegistrar extends JFrame implements ActionListener {
         panel.add(iconLogo);
 
         //Datos de ususario
-        JTextField nombreU = new JTextField();
+        nombreU = new JTextField();
         nombreU.setBounds(70, 200, 280, 40);
         nombreU.setFont(new Font("arial", Font.ITALIC, 15));
         panel.add(nombreU);
@@ -53,7 +56,7 @@ public class FrameRegistrar extends JFrame implements ActionListener {
         iconoContacto.setBounds(30, 200, 40, 40);
         panel.add(iconoContacto);
 
-        JTextField apellidoU = new JTextField();
+        apellidoU = new JTextField();
         apellidoU.setBounds(70, 250, 280, 40);
         apellidoU.setFont(new Font("arial", Font.ITALIC, 15));
         panel.add(apellidoU);
@@ -64,7 +67,7 @@ public class FrameRegistrar extends JFrame implements ActionListener {
         iconoContactoA.setBounds(30, 250, 40, 40);
         panel.add(iconoContactoA);
 
-        JTextField correoU = new JTextField();
+        correoU = new JTextField();
         correoU.setBounds(70, 300, 280, 40);
         correoU.setFont(new Font("arial", Font.ITALIC, 15));
         panel.add(correoU);
@@ -75,7 +78,7 @@ public class FrameRegistrar extends JFrame implements ActionListener {
         iconoEmail.setBounds(30, 300, 40, 40);
         panel.add(iconoEmail);
 
-        JPasswordField contraseñaU = new JPasswordField();
+        contraseñaU = new JPasswordField();
         contraseñaU.setBounds(70, 350, 280, 40);
         contraseñaU.setFont(new Font("arial", Font.ITALIC, 15));
         panel.add(contraseñaU);
@@ -86,7 +89,7 @@ public class FrameRegistrar extends JFrame implements ActionListener {
         ContraseñaIcon.setBounds(30, 350, 40, 40);
         panel.add(ContraseñaIcon);
 
-        JTextField telefonoU = new JTextField();
+        telefonoU = new JTextField();
         telefonoU.setBounds(70, 400, 280, 40);
         telefonoU.setFont(new Font("arial", Font.ITALIC, 15));
         panel.add(telefonoU);
@@ -99,56 +102,46 @@ public class FrameRegistrar extends JFrame implements ActionListener {
 
         //Botones de Usuario
 
-        JButton boton = new JButton();
-        boton.setText("REGISTRAR");
-        boton.setFont(new Font("arial", Font.BOLD, 10));
-        boton.setBounds(30, 480, 150, 45);
-        panel.add(boton);
-        ActionListener registrar = new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
+        registrar = new JButton();
+        registrar.setText("REGISTRAR");
+        registrar.setFont(new Font("arial", Font.BOLD, 10));
+        registrar.setBounds(30, 480, 150, 45);
+        registrar.addActionListener(this);
+        panel.add(registrar);
 
-                String nombre = nombreU.getText();
-                String apellido = apellidoU.getText();
-                String correo = correoU.getText();
-                String contraseña = contraseñaU.getText();
-                String telefono = telefonoU.getText();
-                //String fechaDeNacimiento = fechaDeNacimientoU.getText();
-                //String sexo = sexoEnviar[0];
-
-                if (nombre.isEmpty() || apellido.isEmpty() || correo.isEmpty() ||contraseña.isEmpty() || contraseña.isEmpty() || telefono.isEmpty()) {
-                    System.err.println("Por favor llene todos los campos");
-                } else {
-                   /* operacionPersona.guardarpersona(nombre, apellido
-                            , correo, contraseña, telefono, fechaDeNacimiento, sexo);
-                    System.out.println("\033[32mSe registro correctamente el usuario: "+nombre);*/
-
-                }
-
-            }
-        };
-        boton.addActionListener(registrar);
-
-
-        boton = new JButton();
-        boton.setText("REGRESAR");
-        boton.setFont(new Font("arial", Font.BOLD, 10));
-        boton.setBounds(200,480, 150, 45);
-        panel.add(boton);
-
-        ActionListener regreso = new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-             /*   RunMicarroFacil run = new RunMicarroFacil();
-                run.frameInicio();*/
-            }
-        };
-
+        volver = new JButton();
+        volver.setText("VOLVER");
+        volver.setFont(new Font("arial", Font.BOLD, 10));
+        volver.setBounds(200, 480, 150, 45);
+        volver.addActionListener(this);
+        panel.add(volver);
 
     }
 
     @Override
-    public void actionPerformed(ActionEvent e) {
+    public void actionPerformed(ActionEvent evento) {
+        if (evento.getSource() ==registrar){
+            System.out.println("HOLA");
+        agregarUsuario();
+        }
+        if (evento.getSource() == volver){
+            System.out.println("Está volviendo");
+        }
+    }
 
+    private void agregarUsuario() {
+        String nombre = nombreU.getText();
+        String apellido = apellidoU.getText();
+        String correo = correoU.getText();
+        String contraseña = contraseñaU.getText();
+        String telefono = telefonoU.getText();
+
+        if (nombre.isEmpty() || apellido.isEmpty() || correo.isEmpty() || contraseña.isEmpty() || contraseña.isEmpty() || telefono.isEmpty()) {
+            System.err.println("Por favor llene todos los campos");
+        } else {
+            registro = new Registro();
+            registro.CrearPersona(apellido, nombre, telefono, correo, contraseña);
+            System.out.println("Se registró correctamente");
+        }
     }
 }
