@@ -4,7 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
-public class FrameCartelera extends JFrame {
+public class FrameCartelera extends JFrame implements ActionListener{
 
     private JPanel panel;
     private JLabel mensaje;
@@ -33,8 +33,13 @@ public class FrameCartelera extends JFrame {
 
         JButton Peli1 = new JButton();
         Peli1.setBounds(20,300,150,200);
-        //ImageIcon icon = new ImageIcon("Peli1.png");
-        //Peli1.setIcon(new ImageIcon(icon.getImage().getScaledInstance(Peli1.getWidth(),Peli1.getHeight(),Image.SCALE_SMOOTH)));
+        ImageIcon icon = new ImageIcon("1.png");
+        Peli1.setIcon(new ImageIcon(icon.getImage().getScaledInstance(Peli1.getWidth(),Peli1.getHeight(),Image.SCALE_SMOOTH)));
         panel.add(Peli1);
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+
     }
 }
