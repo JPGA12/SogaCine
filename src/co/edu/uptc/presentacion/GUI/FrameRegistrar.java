@@ -1,6 +1,6 @@
 package co.edu.uptc.presentacion.GUI;
 
-import co.edu.uptc.logica.control.Registro;
+import co.edu.uptc.logica.control.Cine;
 import co.edu.uptc.utilidades.TextPrompt;
 
 import javax.swing.*;
@@ -15,7 +15,7 @@ public class FrameRegistrar extends JFrame implements ActionListener {
     private JPasswordField contraseñaU;
     private JButton registrar, volver;
 
-    private Registro registro;
+    private Cine cine;
 
 
     public FrameRegistrar() {
@@ -139,8 +139,8 @@ public class FrameRegistrar extends JFrame implements ActionListener {
         if (nombre.isEmpty() || apellido.isEmpty() || correo.isEmpty() || contraseña.isEmpty() || contraseña.isEmpty() || telefono.isEmpty()) {
             System.err.println("Por favor llene todos los campos");
         } else {
-            registro = new Registro();
-            registro.CrearPersona(apellido, nombre, telefono, correo, contraseña);
+            cine = new Cine();
+            cine.CrearPersona(apellido, nombre, telefono, correo, contraseña);
             System.out.println("Se registró correctamente");
         }
     }

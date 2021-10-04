@@ -1,14 +1,14 @@
 package co.edu.uptc.presentacion;
 
 import java.util.Scanner;
-import co.edu.uptc.logica.control.Registro;
+import co.edu.uptc.logica.control.Cine;
 
 public class Menu {
 
-    private Registro r;
+    private Cine r;
 
     public Menu() {
-        r = new Registro();
+        r = new Cine();
     }
 
     Scanner sc = new Scanner(System.in);

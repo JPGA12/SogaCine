@@ -16,10 +16,10 @@ public class RunSogaCine {
 //        new Menu().Inicio();
         System.out.println("Bienvenido");
         System.out.println("Ejecutando");
-        //frameRegistrar.setVisible(true);
-        frameCartelera.setVisible(true);
+//        frameRegistrar.setVisible(true);
+//        frameCartelera.setVisible(true);
 //        frameMenu.setVisible(true);
-        //frameEstrenos.setVisible(true);
+//        frameEstrenos.setVisible(true);
     }
 
 //    public void frameRegistro(){

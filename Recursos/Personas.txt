@@ -1,4 +1,1 @@
-Juan,3228223973,Juan@gmail.com,Juan;
-Raul,3124865794,Raulito@gmail.com,123456;
-InicioSecionRapido,123456789,2,2;
-Estepa,313256,juango123,juan123;
+Juan,Alarcon,3156843,JuanA123,hola123;

@@ -1,15 +1,20 @@
 package co.edu.uptc.logica.control;
 
+import co.edu.uptc.logica.modelo.Pelicula;
 import co.edu.uptc.logica.modelo.Persona;
+import co.edu.uptc.persistencia.DAOPeliculas;
 import co.edu.uptc.persistencia.DAOPersonas;
 
 import java.util.*;
 
-public class Registro {
+public class Cine {
     private ArrayList<Persona> ListaPersonas;
+    private ArrayList<Pelicula> ListaPelicula;
 
-    public Registro(){
+    public Cine(){
         ListaPersonas = new DAOPersonas().mostrarDatosPersonas();
+        ListaPelicula = new DAOPeliculas().mostrarDatosPelicula();
+
     }
     public void CrearPersona(String Apellido, String Nombre, String Telefono, String Email, String Contraseña) {
 
@@ -51,4 +56,6 @@ public class Registro {
     public void setListaPersonas(ArrayList<Persona> listaPersonas) {
         ListaPersonas = listaPersonas;
     }
+
+
 }
