@@ -108,6 +108,9 @@ public class FrameIngreso extends JFrame implements ActionListener {
             }
         }
         if (evento.getSource()==volver){
+            FrameInicio frameInicio = new FrameInicio();
+            frameInicio.setVisible(true);
+            dispose();
             System.out.println("Volviendo");
         }
     }

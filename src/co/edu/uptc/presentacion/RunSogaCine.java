@@ -12,15 +12,7 @@ public class RunSogaCine {
     static FrameMenu frameMenu = new FrameMenu();
 
     public static void main(String[] args) {
-//        new Menu().Inicio();
-        System.out.println("Bienvenido");
-        System.out.println("Ejecutando");
-//        frameRegistrar.setVisible(true);
-//        frameCartelera.setVisible(true);
-//        frameMenu.setVisible(true);
-//        frameEstrenos.setVisible(true);
-//        frameIngreso.setVisible(true);
-        frameInicio.setVisible(true);
+    frameInicio.setVisible(true);
     }
 
 }

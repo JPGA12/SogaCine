@@ -56,7 +56,7 @@ public class FrameMenu extends JFrame implements ActionListener {
         combos.setText("COMBOS");
         combos.setFont(new Font("arial", Font.BOLD, 25));
         combos.setBounds(90, 270, 200, 60);
-        cartelera.addActionListener(this);
+        combos.addActionListener(this);
         panel.add(combos);
 
         estrenos = new JButton();
@@ -71,16 +71,17 @@ public class FrameMenu extends JFrame implements ActionListener {
         volver.setText("VOLVER");
         volver.setFont(new Font("arial", Font.BOLD, 10));
         volver.setBounds(250, 500, 90, 30);
-        estrenos.addActionListener(this);
+        volver.addActionListener(this);
         panel.add(volver);
 
     }
     @Override
     public void actionPerformed(ActionEvent evento) {
         if (evento.getSource()==cartelera){
+            dispose();
             FrameCartelera frameCartelera = new FrameCartelera();
             frameCartelera.setVisible(true);
-            dispose();
+
         }
         if (evento.getSource()==combos){
             System.out.println("Frame combos");
