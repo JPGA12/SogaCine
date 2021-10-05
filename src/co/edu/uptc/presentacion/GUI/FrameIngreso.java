@@ -1,6 +1,6 @@
 package co.edu.uptc.presentacion.GUI;
 
-import co.edu.uptc.presentacion.Menu;
+import co.edu.uptc.logica.control.Cine;
 import co.edu.uptc.utilidades.TextPrompt;
 
 import javax.swing.*;
@@ -13,11 +13,12 @@ public class FrameIngreso extends JFrame implements ActionListener {
     private JPanel panel;
     private JLabel mensaje;
     private JTextField cajaDeTexto;
-    private JButton boton;
+    private JButton ingresar, volver;
     private JTextField correoU;
     private JPasswordField contraseñaU;
     private JLabel ingreso;
     private JLabel incorrecto;
+
 
     public FrameIngreso(){
         setSize(400, 650);
@@ -93,69 +94,56 @@ public class FrameIngreso extends JFrame implements ActionListener {
 
 
     private void colocarBotones() {
-        boton = new JButton();
-        boton.setText("INGRESAR");
-        boton.setFont(new Font("arial", Font.BOLD, 10));
-        boton.setBounds(130, 370, 130, 30);
-        panel.add(boton);
+        ingresar = new JButton();
+        ingresar.setText("INGRESAR");
+        ingresar.setFont(new Font("arial", Font.BOLD, 10));
+        ingresar.setBounds(130, 370, 130, 30);
+        panel.add(ingresar);
 
-        ActionListener ingresar = new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                String correo = correoU.getText();
-                String contraseña = contraseñaU.getText();
-                if (correo.isEmpty() || contraseña.isEmpty()) {
-                    System.err.println("Por favor llene todos los campos");
-                } else {
-
-//                    if (operacionPersona.relacion(correo, contraseña) == true) {
-//
-////                        System.out.println(operacionPublicacion.relacion(correo,contraseña));
-//
-//
-//
-//                        System.out.println("\033[32mHa iniciado sesion ");
-////                        colocarLabelIngreso();
-//
-//
-//
-//
-//
-//                        co.edu.uptc.presentacion.Menu menu = new co.edu.uptc.presentacion.Menu();
-////                        menu.frameSeleccionar();
-//                    }
-//                    else {
-//
-//                        System.err.println("Datos incorrectos");
-//                        colocarLabelIncorrecto();
-//                    }
-
-                }
-
-            }
-        };
-
-        boton.addActionListener(ingresar);
-
-
-        boton = new JButton();
-        boton.setText("VOLVER");
-        boton.setFont(new Font("arial", Font.BOLD, 10));
-        boton.setBounds(250, 500, 90, 30);
-        panel.add(boton);
-        ActionListener inicioSesion = new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                co.edu.uptc.presentacion.Menu menu = new Menu();
-//                menu.frameInicio();
-            }
-        };
-        boton.addActionListener(inicioSesion);
+        volver = new JButton();
+        volver.setText("VOLVER");
+        volver.setFont(new Font("arial", Font.BOLD, 10));
+        volver.setBounds(250, 500, 90, 30);
+        panel.add(volver);
 
     }
 
     @Override
-    public void actionPerformed(ActionEvent e) {
+    public void actionPerformed(ActionEvent evento) {
+    if (evento.getSource()==ingresar){
+        Cine cine = new Cine();
+        System.out.println("Ingresando");
+        verificarCorreo();
+        verificarContraseña();
+
 
     }
-}
+    }
+    private void verificarCorreo(){
+        String correo = correoU.getText();
+
+
+        if (correo.isEmpty()){
+            System.err.println("Por favor escribe el correo: ");
+            colocarLabelIncorrecto();
+        }
+        else {
+            Cine cine  = new Cine();
+            cine.VerificacionEmail(correo);
+        }
+
+        }
+        private void verificarContraseña(){
+        String contraseña = contraseñaU.getText();
+
+        if(contraseña.isEmpty()){
+            System.out.println("Por favor escribe la contraseña");
+            colocarLabelIncorrecto();
+        }
+        else {
+            Cine cine = new Cine();
+            cine.VerificacionContra(contraseña);
+        }
+        }
+    }
+

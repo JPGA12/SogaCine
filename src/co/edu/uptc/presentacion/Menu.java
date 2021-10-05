@@ -155,7 +155,7 @@ public class Menu {
         }
     }*/
 
-    private void Login(){
+    private void  Login(){
         System.out.println("Ingrese su Email");
         String Email=sc.next();
         if(r.VerificacionEmail(Email)!= null){
