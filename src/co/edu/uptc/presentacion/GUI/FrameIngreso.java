@@ -19,8 +19,6 @@ public class FrameIngreso extends JFrame implements ActionListener {
     private JLabel ingreso;
     private JLabel incorrecto;
 
-
-
     public FrameIngreso(){
         setSize(400, 650);
         setTitle("SogaCine");

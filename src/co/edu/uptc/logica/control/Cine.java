@@ -13,7 +13,7 @@ public class Cine {
 
     public Cine(){
         ListaPersonas = new DAOPersonas().mostrarDatosPersonas();
-        ListaPelicula = new DAOPeliculas().mostrarDatosPelicula();
+        ListaPelicula = new DAOPeliculas().mostrarDatosCartelera();
 
     }
     public void CrearPersona(String Apellido, String Nombre, String Telefono, String Email, String Contraseña) {
