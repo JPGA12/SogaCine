@@ -11,13 +11,10 @@ import java.awt.event.ActionListener;
 public class FrameIngreso extends JFrame implements ActionListener {
 
     private JPanel panel;
-    private JLabel mensaje;
-    private JTextField cajaDeTexto;
     private JButton ingresar, volver;
     private JTextField correoU;
     private JPasswordField contraseñaU;
-    private JLabel ingreso;
-    private JLabel incorrecto;
+
 
 
     public FrameIngreso(){
@@ -73,26 +70,6 @@ public class FrameIngreso extends JFrame implements ActionListener {
     }
 
 
-    private void  colocarLabelIngreso(){
-        ingreso = new JLabel();
-        ingreso.setText("INGRESANDO");
-        ingreso.setBounds(145, 350, 130, 30);
-        ingreso.setFont(new Font("arial", Font.BOLD, 15));
-        ingreso.setForeground(Color.GREEN);
-        panel.add(ingreso);
-    }
-
-
-    private void colocarLabelIncorrecto(){
-        incorrecto = new JLabel();
-        incorrecto.setText("DATOS INCORRECTOS");
-        incorrecto.setForeground(Color.RED);
-        incorrecto.setBounds(110, 350, 180, 30);
-        incorrecto.setFont(new Font("arial", Font.BOLD, 15));
-        panel.add(incorrecto);
-    }
-
-
     private void colocarBotones() {
         ingresar = new JButton();
         ingresar.setText("INGRESAR");
@@ -116,18 +93,28 @@ public class FrameIngreso extends JFrame implements ActionListener {
             Cine cine = new Cine();
             String correo = correoU.getText();
             String contraseña = contraseñaU.getText();
-            System.out.println("Ingresando");
-            if(cine.VerificacionEmail(correo)!= null){
-                if (cine.VerificacionContra(contraseña)!=null){
-                    System.out.println("\n==== BIENVENIDO ====");
+            if (correo.isEmpty() || contraseña.isEmpty()){
+                System.err.println("Por favor llene todos los campos");
+            }
+            else {
+                if(cine.VerificacionEmail(correo)!= null){
+                    if (cine.VerificacionContra(contraseña)!=null){
+                        System.out.println("\n==== BIENVENIDO ====");
+                        System.out.println("Ingresando");
+
+                    }else {
+                        System.err.println("Error: Contraseña Incorrecta");
+
+
+                    }
                 }else {
-                    System.out.println("Error: Contraseña Incorrecta");
+                    System.err.println("Error: Cuenta no encontrada");
 
                 }
-            }else {
-                System.out.println("Error: Cuenta no encontrada");
-
             }
+        }
+        if (evento.getSource()==volver){
+            System.out.println("Volviendo");
         }
     }
 }
