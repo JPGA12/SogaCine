@@ -15,8 +15,6 @@ public class FrameIngreso extends JFrame implements ActionListener {
     private JTextField correoU;
     private JPasswordField contraseñaU;
 
-
-
     public FrameIngreso(){
         setSize(400, 650);
         setTitle("SogaCine");
@@ -29,14 +27,12 @@ public class FrameIngreso extends JFrame implements ActionListener {
         colocarPaneles();
         colocarEtiqueta();
         colocarBotones();
-
     }
     private void colocarPaneles() {
         panel = new JPanel();
         panel.setLayout(null);
         panel.setBackground(Color.darkGray);
         this.getContentPane().add(panel);
-
     }
     private void colocarEtiqueta() {
 
@@ -55,7 +51,6 @@ public class FrameIngreso extends JFrame implements ActionListener {
         iconoContacto.setBounds(25, 220, 48, 35);
         panel.add(iconoContacto);
 
-
         contraseñaU = new JPasswordField();
         contraseñaU.setBounds(68, 295, 280, 35);
         contraseñaU.setFont(new Font("arial", Font.ITALIC, 15));
@@ -68,7 +63,6 @@ public class FrameIngreso extends JFrame implements ActionListener {
         panel.add(iconoContraseña);
 
     }
-
 
     private void colocarBotones() {
         ingresar = new JButton();
@@ -101,15 +95,16 @@ public class FrameIngreso extends JFrame implements ActionListener {
                     if (cine.VerificacionContra(contraseña)!=null){
                         System.out.println("\n==== BIENVENIDO ====");
                         System.out.println("Ingresando");
+                        FrameMenu frameMenu = new FrameMenu();
+                        frameMenu.setVisible(true);
+                        FrameIngreso frameIngreso = new FrameIngreso();
+                        frameIngreso.setVisible(false);
 
                     }else {
                         System.err.println("Error: Contraseña Incorrecta");
-
-
                     }
                 }else {
                     System.err.println("Error: Cuenta no encontrada");
-
                 }
             }
         }

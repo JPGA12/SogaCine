@@ -11,9 +11,7 @@ import java.awt.event.ActionListener;
 public class FrameMenu extends JFrame implements ActionListener {
 
     private JPanel panel;
-    private JLabel mensaje;
-    private JTextField cajaDeTexto;
-    private JButton boton;
+    private JButton cartelera,combos,estrenos,volver;
     private JLabel ingreso;
     private JLabel incorrecto;
 
@@ -47,42 +45,39 @@ public class FrameMenu extends JFrame implements ActionListener {
     }
 
     private void colocarBotones() {
-        boton = new JButton();
-        boton.setText("CARTELERA");
-        boton.setFont(new Font("arial", Font.BOLD, 25));
-        boton.setBounds(90, 200, 200, 60);
-        panel.add(boton);
+        cartelera = new JButton();
+        cartelera.setText("CARTELERA");
+        cartelera.setFont(new Font("arial", Font.BOLD, 25));
+        cartelera.setBounds(90, 200, 200, 60);
+        cartelera.addActionListener(this);
+        panel.add(cartelera);
 
-        boton = new JButton();
-        boton.setText("COMBOS");
-        boton.setFont(new Font("arial", Font.BOLD, 25));
-        boton.setBounds(90, 270, 200, 60);
-        panel.add(boton);
+        combos = new JButton();
+        combos.setText("COMBOS");
+        combos.setFont(new Font("arial", Font.BOLD, 25));
+        combos.setBounds(90, 270, 200, 60);
+        panel.add(combos);
 
-        boton = new JButton();
-        boton.setText("PRÓXIMOS ESTRENOS");
-        boton.setFont(new Font("arial", Font.BOLD, 14));
-        boton.setBounds(90, 340, 200, 60);
-        panel.add(boton);
+        estrenos = new JButton();
+        estrenos.setText("PRÓXIMOS ESTRENOS");
+        estrenos.setFont(new Font("arial", Font.BOLD, 14));
+        estrenos.setBounds(90, 340, 200, 60);
+        panel.add(estrenos);
 
 
-        boton = new JButton();
-        boton.setText("VOLVER");
-        boton.setFont(new Font("arial", Font.BOLD, 10));
-        boton.setBounds(250, 500, 90, 30);
-        panel.add(boton);
-        ActionListener inicioSesion = new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                co.edu.uptc.presentacion.Menu menu = new Menu();
-//                menu.frameInicio();
-            }
-        };
-        boton.addActionListener(inicioSesion);
+        volver = new JButton();
+        volver.setText("VOLVER");
+        volver.setFont(new Font("arial", Font.BOLD, 10));
+        volver.setBounds(250, 500, 90, 30);
+        panel.add(volver);
 
     }
     @Override
-    public void actionPerformed(ActionEvent e) {
+    public void actionPerformed(ActionEvent evento) {
+        if (evento.getSource()==cartelera){
+            FrameCartelera frameCartelera = new FrameCartelera();
+            frameCartelera.setVisible(true);
+        }
 
     }
 }
