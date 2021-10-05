@@ -88,6 +88,7 @@ public class FrameIngreso extends JFrame implements ActionListener {
             String correo = correoU.getText();
             String contraseña = contraseñaU.getText();
             if (correo.isEmpty() || contraseña.isEmpty()){
+                JOptionPane.showMessageDialog(null,"Por favor llene todos los campos");
                 System.err.println("Por favor llene todos los campos");
             }
             else {
@@ -100,9 +101,11 @@ public class FrameIngreso extends JFrame implements ActionListener {
                         dispose();
 
                     }else {
+                        JOptionPane.showMessageDialog(null, "Error: Contraseña Incorrecta" );
                         System.err.println("Error: Contraseña Incorrecta");
                     }
                 }else {
+                    JOptionPane.showMessageDialog(null,"Error: Cuenta no encontrada" );
                     System.err.println("Error: Cuenta no encontrada");
                 }
             }

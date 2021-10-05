@@ -142,6 +142,7 @@ public class FrameRegistrar extends JFrame implements ActionListener {
         String telefono = telefonoU.getText();
 
         if (nombre.isEmpty() || apellido.isEmpty() || correo.isEmpty() || contraseña.isEmpty() || contraseña.isEmpty() || telefono.isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Por favor llene todos los campos");
             System.err.println("Por favor llene todos los campos");
         } else {
             cine = new Cine();

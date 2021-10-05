@@ -8,7 +8,7 @@ import java.awt.event.ActionListener;
 public class FrameEstrenos extends JFrame implements ActionListener{
 
     private JPanel panel;
-    private JButton Boton1, Boton2, Boton3, Boton4;
+    private JButton Boton1, Boton2, Boton3, Boton4, volver;
     private JLabel iconLogo, titulo;
 
     public FrameEstrenos(){
@@ -30,11 +30,11 @@ public class FrameEstrenos extends JFrame implements ActionListener{
     }
     public void colocarEtiqueta(){
         iconLogo = new JLabel(new ImageIcon("imagenes/LogoSoga.png"));
-        iconLogo.setBounds(20, 20, 350, 100);
+        iconLogo.setBounds(20, 5, 350, 100);
         panel.add(iconLogo);
 
         titulo = new JLabel();
-        titulo.setBounds(20, 90, 350, 100);
+        titulo.setBounds(20, 75, 350, 100);
         titulo.setHorizontalAlignment(SwingConstants.CENTER);
         titulo.setText("PROXIMOS ESTRENOS");
         titulo.setFont(new Font("Tahoma", 1, 30));
@@ -42,7 +42,7 @@ public class FrameEstrenos extends JFrame implements ActionListener{
         panel.add(titulo);
 
         Boton1 = new JButton();
-        Boton1.setBounds(40,170,150,200);
+        Boton1.setBounds(40,155,150,200);
         ImageIcon icon1 = new ImageIcon("imagenes/Proximos1.png");
         Boton1.setIcon(new ImageIcon(icon1.getImage().getScaledInstance(Boton1.getWidth(), Boton1.getHeight(),Image.SCALE_SMOOTH)));
         Boton1.setBorder(BorderFactory.createLineBorder(Color.darkGray, 2, true));
@@ -50,7 +50,7 @@ public class FrameEstrenos extends JFrame implements ActionListener{
         panel.add(Boton1);
 
         Boton2 = new JButton();
-        Boton2.setBounds(200,170,150,200);
+        Boton2.setBounds(200,155,150,200);
         ImageIcon icon2 = new ImageIcon("imagenes/Proximos2.jpg");
         Boton2.setIcon(new ImageIcon(icon2.getImage().getScaledInstance(Boton2.getWidth(), Boton2.getHeight(),Image.SCALE_SMOOTH)));
         Boton2.setBorder(BorderFactory.createLineBorder(Color.darkGray, 2, true));
@@ -58,7 +58,7 @@ public class FrameEstrenos extends JFrame implements ActionListener{
         panel.add(Boton2);
 
         Boton3 = new JButton();
-        Boton3.setBounds(40,380,150,200);
+        Boton3.setBounds(40,365,150,200);
         ImageIcon icon3 = new ImageIcon("imagenes/Proximos3.jpg");
         Boton3.setIcon(new ImageIcon(icon3.getImage().getScaledInstance(Boton3.getWidth(), Boton3.getHeight(),Image.SCALE_SMOOTH)));
         Boton3.setBorder(BorderFactory.createLineBorder(Color.darkGray, 2, true));
@@ -66,18 +66,39 @@ public class FrameEstrenos extends JFrame implements ActionListener{
         panel.add(Boton3);
 
         Boton4 = new JButton();
-        Boton4.setBounds(200,380,150,200);
+        Boton4.setBounds(200,365,150,200);
         ImageIcon icon4 = new ImageIcon("imagenes/Proximos4.jpg");
         Boton4.setIcon(new ImageIcon(icon4.getImage().getScaledInstance(Boton4.getWidth(), Boton4.getHeight(),Image.SCALE_SMOOTH)));
         Boton4.setBorder(BorderFactory.createLineBorder(Color.darkGray, 2, true));
         Boton4.addActionListener(this);
         panel.add(Boton4);
+
+        volver = new JButton();
+        volver.setText("VOLVER");
+        volver.setFont(new Font("arial", Font.BOLD, 10));
+        volver.setBounds(20, 572, 350, 30);
+        volver.addActionListener(this);
+        panel.add(volver);
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if (e.getSource() == Boton1 || e.getSource() == Boton2 || e.getSource() == Boton3 || e.getSource() == Boton4) {
-            System.out.println("Papi rico");
+        if (e.getSource()==Boton1){
+            JOptionPane.showMessageDialog(null, "A nivel mundial se estrena el:\n11 de marzo de 2022");
+        }
+        if (e.getSource()==Boton2){
+            JOptionPane.showMessageDialog(null, "A nivel mundial se estrena el:\n4 de febrero de 2022");
+        }
+        if (e.getSource()==Boton3){
+            JOptionPane.showMessageDialog(null, "A nivel mundial se estrena el:\n17 de diciembre de 2021");
+        }
+        if (e.getSource()==Boton4){
+            JOptionPane.showMessageDialog(null, "A nivel mundial se estrena el:\n15 de octubre de 2021");
+        }
+        if (e.getSource()==volver){
+            FrameMenu frameMenu = new FrameMenu();
+            frameMenu.setVisible(true);
+            dispose();
         }
     }
 }

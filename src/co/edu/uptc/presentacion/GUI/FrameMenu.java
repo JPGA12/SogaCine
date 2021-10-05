@@ -70,7 +70,7 @@ public class FrameMenu extends JFrame implements ActionListener {
         volver = new JButton();
         volver.setText("VOLVER");
         volver.setFont(new Font("arial", Font.BOLD, 10));
-        volver.setBounds(250, 500, 90, 30);
+        volver.setBounds(148, 500, 90, 30);
         volver.addActionListener(this);
         panel.add(volver);
 
@@ -78,17 +78,23 @@ public class FrameMenu extends JFrame implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent evento) {
         if (evento.getSource()==cartelera){
-            dispose();
             FrameCartelera frameCartelera = new FrameCartelera();
             frameCartelera.setVisible(true);
-
+            dispose();
         }
         if (evento.getSource()==combos){
-            System.out.println("Frame combos");
+            FrameCombos frameCombos = new FrameCombos();
+            frameCombos.setVisible(true);
+            dispose();
         }
         if (evento.getSource()==estrenos){
             FrameEstrenos frameEstrenos = new FrameEstrenos();
             frameEstrenos.setVisible(true);
+            dispose();
+        }
+        if (evento.getSource()==volver){
+            FrameInicio frameInicio = new FrameInicio();
+            frameInicio.setVisible(true);
             dispose();
         }
 
