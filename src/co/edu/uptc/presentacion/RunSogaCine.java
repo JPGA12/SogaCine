@@ -8,8 +8,9 @@ public class RunSogaCine {
     static FrameCartelera frameCartelera = new FrameCartelera();
     static FrameEstrenos frameEstrenos = new FrameEstrenos();
     static FrameIngreso frameIngreso = new FrameIngreso();
-
+    static FrameInicio frameInicio = new FrameInicio();
     static FrameMenu frameMenu = new FrameMenu();
+
     public static void main(String[] args) {
 //        new Menu().Inicio();
         System.out.println("Bienvenido");
@@ -18,7 +19,8 @@ public class RunSogaCine {
 //        frameCartelera.setVisible(true);
 //        frameMenu.setVisible(true);
 //        frameEstrenos.setVisible(true);
-        frameIngreso.setVisible(true);
+//        frameIngreso.setVisible(true);
+        frameInicio.setVisible(true);
     }
 
 }
