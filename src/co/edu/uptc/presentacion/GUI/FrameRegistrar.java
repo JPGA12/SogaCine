@@ -13,7 +13,7 @@ public class FrameRegistrar extends JFrame implements ActionListener {
     private JPanel panel;
     private JTextField nombreU, apellidoU,correoU,telefonoU;
     private JPasswordField contraseñaU;
-    private JButton registrar, volver;
+    private JButton registrar;
 
     private Cine cine;
 
@@ -105,16 +105,9 @@ public class FrameRegistrar extends JFrame implements ActionListener {
         registrar = new JButton();
         registrar.setText("REGISTRAR");
         registrar.setFont(new Font("arial", Font.BOLD, 10));
-        registrar.setBounds(30, 480, 150, 45);
+        registrar.setBounds(125, 480, 150, 45);
         registrar.addActionListener(this);
         panel.add(registrar);
-
-        volver = new JButton();
-        volver.setText("VOLVER");
-        volver.setFont(new Font("arial", Font.BOLD, 10));
-        volver.setBounds(200, 480, 150, 45);
-        volver.addActionListener(this);
-        panel.add(volver);
 
     }
 
@@ -123,9 +116,6 @@ public class FrameRegistrar extends JFrame implements ActionListener {
         if (evento.getSource() ==registrar){
             System.out.println("HOLA");
         agregarUsuario();
-        }
-        if (evento.getSource() == volver){
-            System.out.println("Está volviendo");
         }
     }
 

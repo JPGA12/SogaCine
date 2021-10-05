@@ -97,8 +97,7 @@ public class FrameIngreso extends JFrame implements ActionListener {
                         System.out.println("Ingresando");
                         FrameMenu frameMenu = new FrameMenu();
                         frameMenu.setVisible(true);
-                        FrameIngreso frameIngreso = new FrameIngreso();
-                        frameIngreso.setVisible(false);
+                        dispose();
 
                     }else {
                         System.err.println("Error: Contraseña Incorrecta");
