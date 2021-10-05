@@ -141,6 +141,11 @@ public class FrameRegistrar extends JFrame implements ActionListener {
         } else {
             cine = new Cine();
             cine.CrearPersona(apellido, nombre, telefono, correo, contraseña);
+            nombreU.setText("");
+            apellidoU.setText("");
+            correoU.setText("");
+            contraseñaU.setText("");
+            telefonoU.setText("");
             System.out.println("Se registró correctamente");
         }
     }

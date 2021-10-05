@@ -28,7 +28,6 @@ public class Cine {
         new DAOPersonas().guardarPersona(p);
 
         ListaPersonas = new DAOPersonas().mostrarDatosPersonas();
-
     }
 
     public Persona VerificacionEmail(String Email){

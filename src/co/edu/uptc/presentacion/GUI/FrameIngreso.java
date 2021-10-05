@@ -98,52 +98,37 @@ public class FrameIngreso extends JFrame implements ActionListener {
         ingresar.setText("INGRESAR");
         ingresar.setFont(new Font("arial", Font.BOLD, 10));
         ingresar.setBounds(130, 370, 130, 30);
+        ingresar.addActionListener(this);
         panel.add(ingresar);
 
         volver = new JButton();
         volver.setText("VOLVER");
         volver.setFont(new Font("arial", Font.BOLD, 10));
         volver.setBounds(250, 500, 90, 30);
+        volver.addActionListener(this);
         panel.add(volver);
 
     }
 
     @Override
     public void actionPerformed(ActionEvent evento) {
-    if (evento.getSource()==ingresar){
-        Cine cine = new Cine();
-        System.out.println("Ingresando");
-        verificarCorreo();
-        verificarContraseña();
-
-
-    }
-    }
-    private void verificarCorreo(){
-        String correo = correoU.getText();
-
-
-        if (correo.isEmpty()){
-            System.err.println("Por favor escribe el correo: ");
-            colocarLabelIncorrecto();
-        }
-        else {
-            Cine cine  = new Cine();
-            cine.VerificacionEmail(correo);
-        }
-
-        }
-        private void verificarContraseña(){
-        String contraseña = contraseñaU.getText();
-
-        if(contraseña.isEmpty()){
-            System.out.println("Por favor escribe la contraseña");
-            colocarLabelIncorrecto();
-        }
-        else {
+        if (evento.getSource()==ingresar){
             Cine cine = new Cine();
-            cine.VerificacionContra(contraseña);
-        }
+            String correo = correoU.getText();
+            String contraseña = contraseñaU.getText();
+            System.out.println("Ingresando");
+            if(cine.VerificacionEmail(correo)!= null){
+                if (cine.VerificacionContra(contraseña)!=null){
+                    System.out.println("\n==== BIENVENIDO ====");
+                }else {
+                    System.out.println("Error: Contraseña Incorrecta");
+
+                }
+            }else {
+                System.out.println("Error: Cuenta no encontrada");
+
+            }
         }
     }
+}
 
