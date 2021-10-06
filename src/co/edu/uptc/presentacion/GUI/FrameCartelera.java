@@ -49,7 +49,7 @@ public class FrameCartelera extends JFrame implements ActionListener{
 
         Boton2 = new JButton();
         Boton2.setBounds(200,155,150,200);
-        ImageIcon icon2 = new ImageIcon("imagenes/2.jpg");
+            ImageIcon icon2 = new ImageIcon("imagenes/2.jpg");
         Boton2.setIcon(new ImageIcon(icon2.getImage().getScaledInstance(Boton2.getWidth(), Boton2.getHeight(),Image.SCALE_SMOOTH)));
         Boton2.setBorder(BorderFactory.createLineBorder(Color.darkGray, 2, true));
         Boton2.addActionListener(this);
@@ -83,15 +83,31 @@ public class FrameCartelera extends JFrame implements ActionListener{
     public void actionPerformed(ActionEvent e) {
         if (e.getSource()==Boton1){
             System.out.println("BOTON1");
+
+            FrameDescripcionPelicula frameDescripcionPelicula = new FrameDescripcionPelicula();
+            frameDescripcionPelicula.mostrarInfoPelicula(1);
+            frameDescripcionPelicula.setVisible(true);
+
         }
         if (e.getSource()==Boton2){
             System.out.println("Boton2");
+            FrameDescripcionPelicula frameDescripcionPelicula = new FrameDescripcionPelicula();
+            frameDescripcionPelicula.mostrarInfoPelicula(2);
+            frameDescripcionPelicula.setVisible(true);
         }
         if (e.getSource()==Boton3){
             System.out.println("Boton3");
+            FrameDescripcionPelicula frameDescripcionPelicula = new FrameDescripcionPelicula();
+            frameDescripcionPelicula.mostrarInfoPelicula(3);
+            frameDescripcionPelicula.setVisible(true);
+
         }
         if (e.getSource()==Boton4){
             System.out.println("Boton4");
+            System.out.println("Boton3");
+            FrameDescripcionPelicula frameDescripcionPelicula = new FrameDescripcionPelicula();
+            frameDescripcionPelicula.mostrarInfoPelicula(4);
+            frameDescripcionPelicula.setVisible(true);
         }
         if (e.getSource()==volver){
             FrameMenu frameMenu = new FrameMenu();
