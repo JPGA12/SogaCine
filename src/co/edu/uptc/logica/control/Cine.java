@@ -1,20 +1,19 @@
 package co.edu.uptc.logica.control;
 
-import co.edu.uptc.logica.modelo.Pelicula;
-import co.edu.uptc.logica.modelo.Persona;
-import co.edu.uptc.persistencia.DAOPeliculas;
-import co.edu.uptc.persistencia.DAOPersonas;
+import co.edu.uptc.logica.modelo.*;
+import co.edu.uptc.persistencia.*;
 
 import java.util.*;
 
 public class Cine {
     private ArrayList<Persona> ListaPersonas;
     private ArrayList<Pelicula> ListaPelicula;
+    private ArrayList<Comida> ListaComidas;
 
     public Cine(){
         ListaPersonas = new DAOPersonas().mostrarDatosPersonas();
         ListaPelicula = new DAOPeliculas().mostrarDatosCartelera();
-
+        ListaComidas = new DAOComida().mostrarDatosComidas();
     }
     public void CrearPersona(String Apellido, String Nombre, String Telefono, String Email, String Contraseña) {
 
@@ -65,5 +64,13 @@ public class Cine {
     }
     public void setListaPelicula(ArrayList<Pelicula> listaPelicula) {
         ListaPelicula = listaPelicula;
+    }
+
+    public ArrayList<Comida> getListaComidas() {
+        return ListaComidas;
+    }
+
+    public void setListaComidas(ArrayList<Comida> listaComidas) {
+        ListaComidas = listaComidas;
     }
 }

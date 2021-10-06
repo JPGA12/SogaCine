@@ -84,24 +84,21 @@ public class FrameCartelera extends JFrame implements ActionListener{
         if (e.getSource()==Boton1){
             System.out.println("BOTON1");
             FrameDescripcionPelicula frameDescripcionPelicula = new FrameDescripcionPelicula();
-            frameDescripcionPelicula.pelicula1(0);
-            //frameDescripcionPelicula.mostrarInfoPelicula(1);
+            frameDescripcionPelicula.pelicula(0);
             frameDescripcionPelicula.setVisible(true);
             dispose();
         }
         if (e.getSource()==Boton2){
             System.out.println("Boton2");
             FrameDescripcionPelicula frameDescripcionPelicula = new FrameDescripcionPelicula();
-            frameDescripcionPelicula.pelicula1(1);
-            //frameDescripcionPelicula.mostrarInfoPelicula(2);
+            frameDescripcionPelicula.pelicula(1);
             frameDescripcionPelicula.setVisible(true);
             dispose();
         }
         if (e.getSource()==Boton3){
             System.out.println("Boton3");
             FrameDescripcionPelicula frameDescripcionPelicula = new FrameDescripcionPelicula();
-            frameDescripcionPelicula.pelicula1(2);
-            //frameDescripcionPelicula.mostrarInfoPelicula(3);
+            frameDescripcionPelicula.pelicula(2);
             frameDescripcionPelicula.setVisible(true);
             dispose();
         }
@@ -109,8 +106,7 @@ public class FrameCartelera extends JFrame implements ActionListener{
             System.out.println("Boton4");
             System.out.println("Boton3");
             FrameDescripcionPelicula frameDescripcionPelicula = new FrameDescripcionPelicula();
-            frameDescripcionPelicula.pelicula1(3);
-            //frameDescripcionPelicula.mostrarInfoPelicula(4);
+            frameDescripcionPelicula.pelicula(3);
             frameDescripcionPelicula.setVisible(true);
             dispose();
         }
