@@ -9,8 +9,10 @@ import java.util.ArrayList;
 public class FrameSala extends JFrame implements ActionListener {
         private JPanel panel;
         private JButton silla, agregar, volver;
-        private JLabel incorrecto;
+        private JLabel sala;
         private ArrayList<JButton> sillas;
+        private ImageIcon iconV = new ImageIcon("imagenes/SillaV.png");
+        private ImageIcon iconR = new ImageIcon("imagenes/SillaR.png");
 
     public FrameSala() {
         setSize(400, 650);
@@ -18,7 +20,6 @@ public class FrameSala extends JFrame implements ActionListener {
         setLocationRelativeTo(null);
         iniciarComponentes();
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-
     }
 
     private void iniciarComponentes() {
@@ -37,7 +38,7 @@ public class FrameSala extends JFrame implements ActionListener {
     private void colocarEtiqueta() {
 
         JLabel iconLogo = new JLabel(new ImageIcon("imagenes/LogoSoga.png"));
-        iconLogo.setBounds(20, 40, 350, 100);
+        iconLogo.setBounds(20, 5, 350, 100);
         panel.add(iconLogo);
 
     }
@@ -47,28 +48,22 @@ public class FrameSala extends JFrame implements ActionListener {
         for (int i = 0; i < 5; i++) {
             for (int j = 0; j < 5; j++) {
                 silla = new JButton();
-                silla.setBackground(Color.green);
                 silla.setBounds(60 + (55 * j), 200 + (55 * i), 50, 50);
+                silla.setIcon(new ImageIcon(iconV.getImage().getScaledInstance(silla.getWidth(), silla.getHeight(),Image.SCALE_SMOOTH)));
+                silla.setBackground(Color.darkGray);
+                silla.setBorder(BorderFactory.createLineBorder(Color.darkGray, 2, true));
                 silla.addActionListener(this);
                 sillas.add(silla);
-
             }
         }
+
         for (int i = 0; i < sillas.size(); i++) {
             panel.add(sillas.get(i));
         }
 
-        /*for (int i = 0; i < 5; i++) {
-            silla = new JButton();
-            silla.setBackground(Color.GREEN);
-            silla.setBounds(45*i,40,30,30);
-            silla.addActionListener(this);
-            sillas.add(silla);
-        }
-        for (int i = 0; i < sillas.size(); i++) {
-            panel.add(sillas.get(i));
-        }*/
-
+        JLabel sala = new JLabel(new ImageIcon("imagenes/Cine.png"));
+        sala.setBounds(-5, 100, 400, 400);
+        panel.add(sala);
 
         volver = new JButton();
         volver.setText("VOLVER");
@@ -76,7 +71,6 @@ public class FrameSala extends JFrame implements ActionListener {
         volver.setBounds(220, 500, 90, 30);
         volver.addActionListener(this);
         panel.add(volver);
-
 
         agregar = new JButton();
         agregar.setText("AÑADIR");
@@ -92,21 +86,21 @@ public class FrameSala extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent evento) {
 
         for (int i = 0; i < sillas.size(); i++) {
-
             if (evento.getSource() == sillas.get(i)) {
-             /*   if (sillas.get(i).getBackground()==Color.red){
-                    sillas.get(i).setBackground(Color.green);*/
-                sillas.get(i).setBackground(Color.red);
+                sillas.get(i).setIcon(new ImageIcon(iconR.getImage().getScaledInstance(silla.getWidth(), silla.getHeight(),Image.SCALE_SMOOTH)));
+                sillas.get(i).setText("X");
             }
         }
 
         if (evento.getSource() == volver) {
-            System.out.println("Volver");
+            FrameCartelera frameCartelera = new FrameCartelera();
+            frameCartelera.setVisible(true);
+            dispose();
         }
         if (evento.getSource() == agregar) {
-            for (int i = 0; i < sillas.size(); i++) {
-                if (sillas.get(i).getBackground() == Color.red) {
-                    System.out.println("Sillas ocupadas: "+(i+1));
+            for (int j = 0; j < sillas.size(); j++){
+                if (sillas.get(j).getText()=="X"){
+                    System.out.println(j);
                 }
             }
         }

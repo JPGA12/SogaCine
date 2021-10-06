@@ -48,6 +48,10 @@ public class Cine {
         return null;
     }
 
+    public void AsientosDisponibles(){
+
+    }
+
     public ArrayList<Persona> getListaPersonas() {
         return ListaPersonas;
     }
@@ -56,5 +60,10 @@ public class Cine {
         ListaPersonas = listaPersonas;
     }
 
-
+    public ArrayList<Pelicula> getListaPelicula() {
+        return ListaPelicula;
+    }
+    public void setListaPelicula(ArrayList<Pelicula> listaPelicula) {
+        ListaPelicula = listaPelicula;
+    }
 }

@@ -1,7 +1,7 @@
 package co.edu.uptc.logica.modelo;
 
 public class Pelicula {
-    String titulo, genero, director, año, duracion;
+    private String titulo, genero, director, año, duracion;
 
     public String getTitulo() {
         return titulo;
