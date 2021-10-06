@@ -13,7 +13,7 @@ public class FrameIngreso extends JFrame implements ActionListener {
     private JPanel panel;
     private JButton ingresar, volver;
     private JTextField correoU;
-    private JPasswordField contraseñaU;
+        private JPasswordField contraseñaU;
 
     public FrameIngreso(){
         setSize(400, 650);

@@ -12,7 +12,6 @@ public class FrameMenu extends JFrame implements ActionListener {
 
     private JPanel panel;
     private JButton cartelera,combos,estrenos,volver;
-    private JLabel ingreso;
     private JLabel incorrecto;
 
     public FrameMenu(){
@@ -34,7 +33,6 @@ public class FrameMenu extends JFrame implements ActionListener {
         panel.setLayout(null);
         panel.setBackground(Color.darkGray);
         this.getContentPane().add(panel);
-
     }
     private void colocarEtiqueta() {
 
