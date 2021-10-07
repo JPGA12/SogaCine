@@ -52,58 +52,56 @@ public class FrameReciboCombos extends JFrame implements ActionListener {
 
         JLabel nombre = new JLabel();
         nombre.setBounds(20, 170, 350, 35);
-        nombre.setText("Nombre del combo:");
         nombre.setFont(new Font("Tahoma", Font.BOLD, 20));
+        nombre.setText("Nombre y Precio:");
         nombre.setForeground(Color.WHITE);
         panel.add(nombre);
         JLabel nombreU = new JLabel();
         nombreU.setBounds(20, 200, 350, 35);
 
-        nombreU.setText(cine.getListaPersonas().get(indice).getNombre());
-        nombreU.setFont(new Font("Tahoma", Font.BOLD, 20));
+        nombreU.setText(cine.getListaComidas().get(indice).getNombre()+": "+cine.getListaComidas().get(indice).getPrecio());
+        nombreU.setFont(new Font("Tahoma", Font.BOLD, 15));
         nombreU.setForeground(Color.WHITE);
         panel.add(nombreU);
 
-        JLabel telefono = new JLabel();
-        telefono.setBounds(20, 230, 350, 35);
-        telefono.setText("Numero del comprador:");
-        telefono.setFont(new Font("Tahoma", Font.BOLD, 20));
-        telefono.setForeground(Color.WHITE);
-        panel.add(telefono);
-        JLabel telefonoU = new JLabel();
-        telefonoU.setBounds(20, 260, 350, 35);
-        telefonoU.setText(cine.getListaPersonas().get(indice).getTelefono());
-        telefonoU.setFont(new Font("Tahoma", Font.BOLD, 20));
-        telefonoU.setForeground(Color.WHITE);
-        panel.add(telefonoU);
+        JLabel  Bebida= new JLabel();
+        Bebida.setBounds(20, 230, 350, 35);
+        Bebida.setText("Bebida:");
+        Bebida.setFont(new Font("Tahoma", Font.BOLD, 20));
+        Bebida.setForeground(Color.WHITE);
+        panel.add(Bebida);
+        JLabel BebidaU = new JLabel();
+        BebidaU.setBounds(20, 260, 350, 35);
+        BebidaU.setText(cine.getListaComidas().get(indice).getComida());
+        BebidaU.setFont(new Font("Tahoma", Font.BOLD, 15));
+        BebidaU.setForeground(Color.WHITE);
+        panel.add(BebidaU);
 
-        JLabel sillas = new JLabel();
-        sillas.setBounds(20, 290, 350, 35);
-        sillas.setText("Sillas compradas:");
-        sillas.setFont(new Font("Tahoma", Font.BOLD, 20));
-        sillas.setForeground(Color.WHITE);
-        panel.add(sillas);
-        JLabel sillasU = new JLabel();
-        sillasU.setBounds(20, 320, 350, 35);
-        sillasU.setText("sillas");
-//        sillasU.setText();
-        sillasU.setFont(new Font("Tahoma", Font.BOLD, 20));
-        sillasU.setForeground(Color.WHITE);
-        panel.add(sillasU);
+        JLabel comida = new JLabel();
+        comida.setBounds(20, 290, 350, 35);
+        comida.setText("Comida:");
+        comida.setFont(new Font("Tahoma", Font.BOLD, 20));
+        comida.setForeground(Color.WHITE);
+        panel.add(comida);
+        JLabel comidaU = new JLabel();
+        comidaU.setBounds(20, 320, 350, 35);
+        comidaU.setText(cine.getListaComidas().get(indice).getComida());
+        comidaU.setFont(new Font("Tahoma", Font.BOLD, 15));
+        comidaU.setForeground(Color.WHITE);
+        panel.add(comidaU);
 
-        JLabel fecha = new JLabel();
-        fecha.setBounds(20, 350, 350, 35);
-        fecha.setText("Fecha de la comra:");
-        fecha.setFont(new Font("Tahoma", Font.BOLD, 20));
-        fecha.setForeground(Color.WHITE);
-        panel.add(fecha);
-        JLabel fechaU = new JLabel();
-        fechaU.setBounds(20, 380, 350, 35);
-        fechaU.setText("DIa");
-//        fechaU.setText();
-        fechaU.setFont(new Font("Tahoma", Font.BOLD, 20));
-        fechaU.setForeground(Color.WHITE);
-        panel.add(fechaU);
+        JLabel snack = new JLabel();
+        snack.setBounds(20, 350, 350, 35);
+        snack.setText("Snacks:");
+        snack.setFont(new Font("Tahoma", Font.BOLD, 20));
+        snack.setForeground(Color.WHITE);
+        panel.add(snack);
+        JLabel snackU = new JLabel();
+        snackU.setBounds(20, 380, 350, 35);
+        snackU.setText(cine.getListaComidas().get(indice).getAperitivo());
+        snackU.setFont(new Font("Tahoma", Font.BOLD, 15));
+        snackU.setForeground(Color.WHITE);
+        panel.add(snackU);
     }
 
 
