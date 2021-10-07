@@ -74,14 +74,21 @@ public class FrameCombos extends JFrame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
+        FrameReciboCombos frameReciboCombos = new FrameReciboCombos();
         if (e.getSource()==Boton1){
-            System.out.println("BOTON1");
+            frameReciboCombos.setVisible(true);
+            dispose();
+            frameReciboCombos.recibo(0);
         }
         if (e.getSource()==Boton2){
-            System.out.println("Boton2");
+            frameReciboCombos.setVisible(true);
+            dispose();
+            frameReciboCombos.recibo(1);
         }
         if (e.getSource()==Boton3){
-            System.out.println("Boton3");
+            frameReciboCombos.setVisible(true);
+            dispose();
+            frameReciboCombos.recibo(2);
         }
         if (e.getSource()==volver){
             FrameMenu frameMenu = new FrameMenu();
