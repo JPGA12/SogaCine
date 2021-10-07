@@ -9,13 +9,16 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
 public class FrameSala extends JFrame implements ActionListener {
-        private JPanel panel;
-        private JButton silla, agregar, volver;
-        private JLabel sala;
-        private ArrayList<JButton> sillas;
-        private ImageIcon iconV = new ImageIcon("imagenes/SillaV.png");
-        private ImageIcon iconR = new ImageIcon("imagenes/SillaR.png");
-        Cine cine  = new Cine();
+    private JPanel panel;
+    private JButton silla, agregar, volver;
+    private JLabel sala;
+    private ArrayList<JButton> sillas;
+    private JComboBox Horario;
+    private ImageIcon iconV = new ImageIcon("imagenes/SillaV.png");
+    private ImageIcon iconR = new ImageIcon("imagenes/SillaR.png");
+    Cine cine = new Cine();
+    final String[] horario = new String[1];
+    private String horarioU;
 
     public FrameSala() {
         setSize(400, 650);
@@ -32,10 +35,10 @@ public class FrameSala extends JFrame implements ActionListener {
     }
 
     private void colocarPaneles() {
-            panel = new JPanel();
-            panel.setLayout(null);
-            panel.setBackground(Color.darkGray);
-            this.getContentPane().add(panel);
+        panel = new JPanel();
+        panel.setLayout(null);
+        panel.setBackground(Color.darkGray);
+        this.getContentPane().add(panel);
     }
 
     private void colocarEtiqueta() {
@@ -52,7 +55,7 @@ public class FrameSala extends JFrame implements ActionListener {
             for (int j = 0; j < 5; j++) {
                 silla = new JButton();
                 silla.setBounds(60 + (55 * j), 200 + (55 * i), 50, 50);
-                silla.setIcon(new ImageIcon(iconV.getImage().getScaledInstance(silla.getWidth(), silla.getHeight(),Image.SCALE_SMOOTH)));
+                silla.setIcon(new ImageIcon(iconV.getImage().getScaledInstance(silla.getWidth(), silla.getHeight(), Image.SCALE_SMOOTH)));
                 silla.setBackground(Color.darkGray);
                 silla.setBorder(BorderFactory.createLineBorder(Color.darkGray, 2, true));
                 silla.addActionListener(this);
@@ -68,19 +71,36 @@ public class FrameSala extends JFrame implements ActionListener {
         sala.setBounds(-5, 100, 400, 400);
         panel.add(sala);
 
+        Horario =new JComboBox();
+        Horario.setBounds(68, 500, 200, 30);
+        Horario.addItem("3:30 PM");
+        Horario.addItem("5 PM");
+        Horario.addItem("7 PM");
+
+        panel.add(Horario);
+        Horario.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+            horario[0]=Horario.getSelectedItem().toString();
+            }
+        });
+
+
+
         volver = new JButton();
         volver.setText("VOLVER");
         volver.setFont(new Font("arial", Font.BOLD, 10));
-        volver.setBounds(220, 500, 90, 30);
+        volver.setBounds(220, 550, 90, 30);
         volver.addActionListener(this);
         panel.add(volver);
 
         agregar = new JButton();
         agregar.setText("AÑADIR");
         agregar.setFont(new Font("arial", Font.BOLD, 10));
-        agregar.setBounds(80, 500, 90, 30);
+        agregar.setBounds(80, 550, 90, 30);
         agregar.addActionListener(this);
         panel.add(agregar);
+
 
     }
 
@@ -88,12 +108,14 @@ public class FrameSala extends JFrame implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent evento) {
 
-        for (int i = 0; i < sillas.size(); i++) {
-            if (evento.getSource() == sillas.get(i)) {
-                sillas.get(i).setIcon(new ImageIcon(iconR.getImage().getScaledInstance(silla.getWidth(), silla.getHeight(),Image.SCALE_SMOOTH)));
-                sillas.get(i).setText("X");
+
+
+            for (int i = 0; i < sillas.size(); i++) {
+                if (evento.getSource() == sillas.get(i)) {
+                    sillas.get(i).setIcon(new ImageIcon(iconR.getImage().getScaledInstance(silla.getWidth(), silla.getHeight(), Image.SCALE_SMOOTH)));
+                    sillas.get(i).setText("X");
+                }
             }
-        }
 
         if (evento.getSource() == volver) {
             FrameCartelera frameCartelera = new FrameCartelera();
@@ -101,13 +123,15 @@ public class FrameSala extends JFrame implements ActionListener {
             dispose();
         }
         if (evento.getSource() == agregar) {
-            for (int j = 0; j < sillas.size(); j++){
-                if (sillas.get(j).getText()=="X"){
+            horarioU = horario[0];
+
+            for (int j = 0; j < sillas.size(); j++) {
+                if (sillas.get(j).getText() == "X") {
                     System.out.println(j);
                     FrameReciboBoletas frb = new FrameReciboBoletas();
+                    frb.setFuncion(horarioU);
                     frb.recibo(cine.devolverIndice());
                     frb.setVisible(true);
-//
                 }
             }
         }
