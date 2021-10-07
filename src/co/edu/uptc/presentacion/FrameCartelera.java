@@ -1,17 +1,18 @@
-package co.edu.uptc.presentacion.GUI;
+package co.edu.uptc.presentacion;
+
+import co.edu.uptc.logica.control.Cine;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.awt.event.*;
 
-public class FrameEstrenos extends JFrame implements ActionListener{
+public class FrameCartelera extends JFrame implements ActionListener{
 
+    Cine c = new Cine();
     private JPanel panel;
     private JButton Boton1, Boton2, Boton3, Boton4, volver;
-    private JLabel iconLogo, titulo;
 
-    public FrameEstrenos(){
+    public FrameCartelera(){
         setSize(400, 650);
         setTitle("SogaCine");
         setLocationRelativeTo(null);
@@ -29,21 +30,21 @@ public class FrameEstrenos extends JFrame implements ActionListener{
         this.getContentPane().add(panel);
     }
     public void colocarEtiqueta(){
-        iconLogo = new JLabel(new ImageIcon("imagenes/LogoSoga.png"));
+        JLabel iconLogo = new JLabel(new ImageIcon("imagenes/LogoSoga.png"));
         iconLogo.setBounds(20, 5, 350, 100);
         panel.add(iconLogo);
 
-        titulo = new JLabel();
+        JLabel titulo = new JLabel();
         titulo.setBounds(20, 75, 350, 100);
-        titulo.setHorizontalAlignment(SwingConstants.CENTER);
-        titulo.setText("PROXIMOS ESTRENOS");
-        titulo.setFont(new Font("Tahoma", 1, 30));
+        titulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        titulo.setText("CARTELERA");
+        titulo.setFont(new Font("Tahoma", Font.BOLD, 30));
         titulo.setForeground(Color.WHITE);
         panel.add(titulo);
 
         Boton1 = new JButton();
         Boton1.setBounds(40,155,150,200);
-        ImageIcon icon1 = new ImageIcon("imagenes/Proximos1.jpg");
+        ImageIcon icon1 = new ImageIcon("imagenes/1.jpg");
         Boton1.setIcon(new ImageIcon(icon1.getImage().getScaledInstance(Boton1.getWidth(), Boton1.getHeight(),Image.SCALE_SMOOTH)));
         Boton1.setBorder(BorderFactory.createLineBorder(Color.darkGray, 2, true));
         Boton1.addActionListener(this);
@@ -51,7 +52,7 @@ public class FrameEstrenos extends JFrame implements ActionListener{
 
         Boton2 = new JButton();
         Boton2.setBounds(200,155,150,200);
-        ImageIcon icon2 = new ImageIcon("imagenes/Proximos2.jpg");
+            ImageIcon icon2 = new ImageIcon("imagenes/2.jpg");
         Boton2.setIcon(new ImageIcon(icon2.getImage().getScaledInstance(Boton2.getWidth(), Boton2.getHeight(),Image.SCALE_SMOOTH)));
         Boton2.setBorder(BorderFactory.createLineBorder(Color.darkGray, 2, true));
         Boton2.addActionListener(this);
@@ -59,7 +60,7 @@ public class FrameEstrenos extends JFrame implements ActionListener{
 
         Boton3 = new JButton();
         Boton3.setBounds(40,365,150,200);
-        ImageIcon icon3 = new ImageIcon("imagenes/Proximos3.jpg");
+        ImageIcon icon3 = new ImageIcon("imagenes/3.jpg");
         Boton3.setIcon(new ImageIcon(icon3.getImage().getScaledInstance(Boton3.getWidth(), Boton3.getHeight(),Image.SCALE_SMOOTH)));
         Boton3.setBorder(BorderFactory.createLineBorder(Color.darkGray, 2, true));
         Boton3.addActionListener(this);
@@ -67,7 +68,7 @@ public class FrameEstrenos extends JFrame implements ActionListener{
 
         Boton4 = new JButton();
         Boton4.setBounds(200,365,150,200);
-        ImageIcon icon4 = new ImageIcon("imagenes/Proximos4.jpg");
+        ImageIcon icon4 = new ImageIcon("imagenes/4.jpg");
         Boton4.setIcon(new ImageIcon(icon4.getImage().getScaledInstance(Boton4.getWidth(), Boton4.getHeight(),Image.SCALE_SMOOTH)));
         Boton4.setBorder(BorderFactory.createLineBorder(Color.darkGray, 2, true));
         Boton4.addActionListener(this);
@@ -83,25 +84,35 @@ public class FrameEstrenos extends JFrame implements ActionListener{
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        FrameDescripcionEstreno frameDescripcionEstreno = new FrameDescripcionEstreno();
+        FrameReciboBoletas frameReciboBoletas = new FrameReciboBoletas();
         if (e.getSource()==Boton1){
-            frameDescripcionEstreno.pelicula(0);
-            frameDescripcionEstreno.setVisible(true);
+            System.out.println("BOTON1");
+            FrameDescripcionPelicula frameDescripcionPelicula = new FrameDescripcionPelicula();
+            frameDescripcionPelicula.pelicula(0);
+            frameReciboBoletas.recibo(0);
+            frameDescripcionPelicula.setVisible(true);
             dispose();
         }
         if (e.getSource()==Boton2){
-            frameDescripcionEstreno.pelicula(1);
-            frameDescripcionEstreno.setVisible(true);
+            System.out.println("Boton2");
+            FrameDescripcionPelicula frameDescripcionPelicula = new FrameDescripcionPelicula();
+            frameDescripcionPelicula.pelicula(1);
+            c.ratata(1);
+            frameDescripcionPelicula.setVisible(true);
             dispose();
         }
         if (e.getSource()==Boton3){
-            frameDescripcionEstreno.pelicula(2);
-            frameDescripcionEstreno.setVisible(true);
+            FrameDescripcionPelicula frameDescripcionPelicula = new FrameDescripcionPelicula();
+            frameDescripcionPelicula.pelicula(2);
+            frameReciboBoletas.recibo(2);
+            frameDescripcionPelicula.setVisible(true);
             dispose();
         }
         if (e.getSource()==Boton4){
-            frameDescripcionEstreno.pelicula(3);
-            frameDescripcionEstreno.setVisible(true);
+            FrameDescripcionPelicula frameDescripcionPelicula = new FrameDescripcionPelicula();
+            frameDescripcionPelicula.pelicula(3);
+            c.ratata(3);
+            frameDescripcionPelicula.setVisible(true);
             dispose();
         }
         if (e.getSource()==volver){

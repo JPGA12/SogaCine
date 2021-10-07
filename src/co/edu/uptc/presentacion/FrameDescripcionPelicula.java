@@ -1,4 +1,4 @@
-package co.edu.uptc.presentacion.GUI;
+package co.edu.uptc.presentacion;
 
 import co.edu.uptc.logica.control.Cine;
 
@@ -8,7 +8,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
-public class FrameDescripcionEstreno extends JFrame implements ActionListener {
+public class FrameDescripcionPelicula extends JFrame implements ActionListener {
+
     private JPanel panel;
     private JButton comprar, volver;
     private JLabel Titulo, Genero, Director, Año, Duracion;
@@ -16,12 +17,13 @@ public class FrameDescripcionEstreno extends JFrame implements ActionListener {
     private int indice;
     Cine cine = new Cine();
 
-    public FrameDescripcionEstreno() {
+    public FrameDescripcionPelicula() {
         setSize(400, 650);
         setTitle("SogaCine");
         setLocationRelativeTo(null);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
     }
+
 
     public void pelicula(int i) {
         colocarPaneles();
@@ -52,7 +54,7 @@ public class FrameDescripcionEstreno extends JFrame implements ActionListener {
 
         JLabel iconoPelicula = new JLabel();
         iconoPelicula.setBounds(10, 150, 180, 250);
-        ImageIcon peli1 = new ImageIcon("imagenes/proximos" +(i+1)+ ".jpg");
+        ImageIcon peli1 = new ImageIcon("imagenes/" +(i+1)+ ".jpg");
         iconoPelicula.setIcon(new ImageIcon(peli1.getImage().getScaledInstance(iconoPelicula.getWidth(), iconoPelicula.getHeight(), Image.SCALE_SMOOTH)));
         panel.add(iconoPelicula);
 
@@ -66,7 +68,7 @@ public class FrameDescripcionEstreno extends JFrame implements ActionListener {
         JLabel titulo = new JLabel();
         titulo.setBounds(200, 175, 100, 20);
         titulo.setFont(new Font("Tahoma", Font.BOLD, 15));
-        titulo.setText(cine.getListaEstrenos().get(i).getTitulo());
+        titulo.setText(cine.getListaPelicula().get(i).getTitulo());
         titulo.setForeground(Color.white);
         panel.add(titulo);
 
@@ -80,7 +82,7 @@ public class FrameDescripcionEstreno extends JFrame implements ActionListener {
         JLabel genero = new JLabel();
         genero.setBounds(200, 225, 200, 20);
         genero.setFont(new Font("Tahoma", Font.BOLD, 15));
-        genero.setText(cine.getListaEstrenos().get(i).getGenero());
+        genero.setText(cine.getListaPelicula().get(i).getGenero());
         genero.setForeground(Color.white);
         panel.add(genero);
 
@@ -94,21 +96,21 @@ public class FrameDescripcionEstreno extends JFrame implements ActionListener {
         JLabel direcotr = new JLabel();
         direcotr.setBounds(200, 275, 200, 20);
         direcotr.setFont(new Font("Tahoma", Font.BOLD, 15));
-        direcotr.setText(cine.getListaEstrenos().get(i).getDirector());
+        direcotr.setText(cine.getListaPelicula().get(i).getDirector());
         direcotr.setForeground(Color.white);
         panel.add(direcotr);
 
         Año = new JLabel();
         Año.setBounds(200, 300, 199, 20);
         Año.setFont(new Font("Tahoma", Font.BOLD, 17));
-        Año.setText("Se estrenara el: ");
+        Año.setText("Año de lanzamiento: ");
         Año.setForeground(Color.white);
         panel.add(Año);
 
         JLabel año = new JLabel();
         año.setBounds(200, 325, 200, 20);
         año.setFont(new Font("Tahoma", Font.BOLD, 15));
-        año.setText(cine.getListaEstrenos().get(i).getAño());
+        año.setText(cine.getListaPelicula().get(i).getAño());
         año.setForeground(Color.white);
         panel.add(año);
 
@@ -122,7 +124,7 @@ public class FrameDescripcionEstreno extends JFrame implements ActionListener {
         JLabel duracion = new JLabel();
         duracion.setBounds(200, 375, 200, 20);
         duracion.setFont(new Font("Tahoma", Font.BOLD, 15));
-        duracion.setText(cine.getListaEstrenos().get(i).getDuracion());
+        duracion.setText(cine.getListaPelicula().get(i).getDuracion());
         duracion.setForeground(Color.white);
         panel.add(duracion);
 
@@ -132,16 +134,27 @@ public class FrameDescripcionEstreno extends JFrame implements ActionListener {
         volver.setBounds(20, 500, 350, 30);
         volver.addActionListener(this);
         panel.add(volver);
+
+        comprar = new JButton();
+        comprar.setText("COMPRAR ASIENTOS");
+        comprar.setFont(new Font("arial", Font.BOLD, 10));
+        comprar.setBounds(20, 450, 350, 30);
+        comprar.addActionListener(this);
+        panel.add(comprar);
+
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource()==volver){
-            FrameEstrenos frameEstrenos = new FrameEstrenos();
-            frameEstrenos.setVisible(true);
+            FrameCartelera frameCartelera = new FrameCartelera();
+            frameCartelera.setVisible(true);
             dispose();
         }
-
+        if (e.getSource()== comprar){
+            FrameSala frameSala = new FrameSala();
+            frameSala.setVisible(true);
+            dispose();
+        }
     }
 }
-

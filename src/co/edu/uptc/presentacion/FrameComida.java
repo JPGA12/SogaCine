@@ -1,4 +1,4 @@
-package co.edu.uptc.presentacion.GUI;
+package co.edu.uptc.presentacion;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;

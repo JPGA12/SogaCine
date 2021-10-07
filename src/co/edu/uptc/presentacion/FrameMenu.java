@@ -1,7 +1,4 @@
-package co.edu.uptc.presentacion.GUI;
-
-import co.edu.uptc.presentacion.Menu;
-import co.edu.uptc.utilidades.TextPrompt;
+package co.edu.uptc.presentacion;
 
 import javax.swing.*;
 import java.awt.*;

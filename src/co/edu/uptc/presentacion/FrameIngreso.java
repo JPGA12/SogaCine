@@ -1,4 +1,4 @@
-package co.edu.uptc.presentacion.GUI;
+package co.edu.uptc.presentacion;
 
 import co.edu.uptc.logica.control.Cine;
 import co.edu.uptc.utilidades.TextPrompt;
