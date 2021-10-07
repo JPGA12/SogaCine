@@ -10,6 +10,7 @@ public class Cine {
     private ArrayList<Pelicula> ListaPelicula;
     private ArrayList<Comida> ListaComidas;
     private int indice;
+    private String horarioF;
 
     public Cine(){
         ListaPersonas = new DAOPersonas().mostrarDatosPersonas();
@@ -89,4 +90,6 @@ public class Cine {
         int index = indice;
         return index;
     }
+
+
 }

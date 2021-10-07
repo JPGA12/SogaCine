@@ -11,6 +11,8 @@ public class FrameReciboBoletas extends JFrame implements ActionListener {
     private JPanel panel;
     private JButton ingresar, volver;
     Cine cine = new Cine();
+    private String funcion;
+
 
 
     public FrameReciboBoletas() {
@@ -96,14 +98,13 @@ public class FrameReciboBoletas extends JFrame implements ActionListener {
 
        JLabel fecha = new JLabel();
        fecha.setBounds(20, 350, 350, 35);
-       fecha.setText("Fecha de la comra:");
+       fecha.setText("Horario de la funcion:");
        fecha.setFont(new Font("Tahoma", Font.BOLD, 20));
        fecha.setForeground(Color.WHITE);
        panel.add(fecha);
        JLabel fechaU = new JLabel();
        fechaU.setBounds(20, 380, 350, 35);
-       fechaU.setText("DIa");
-//        fechaU.setText();
+       fechaU.setText(funcion);
        fechaU.setFont(new Font("Tahoma", Font.BOLD, 20));
        fechaU.setForeground(Color.WHITE);
        panel.add(fechaU);
@@ -113,5 +114,12 @@ public class FrameReciboBoletas extends JFrame implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
 
+    }
+    public String getFuncion() {
+        return funcion;
+    }
+
+    public void setFuncion(String funcion) {
+        this.funcion = funcion;
     }
 }
