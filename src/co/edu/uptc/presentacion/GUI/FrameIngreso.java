@@ -102,6 +102,7 @@ public class FrameIngreso extends JFrame implements ActionListener {
                         cine.guardarIndice(correo);
                         System.out.println(cine.devolverIndice());
                         int numero = cine.devolverIndice();
+                        System.out.println(numero);
 
                         FrameReciboBoletas frb = new FrameReciboBoletas();
                         frb.recibo(numero);

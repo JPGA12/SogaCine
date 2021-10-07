@@ -105,7 +105,6 @@ public class FrameReciboBoletas extends JFrame implements ActionListener {
        JLabel fechaU = new JLabel();
        fechaU.setBounds(20, 380, 350, 35);
        fechaU.setText(funcion);
-//        fechaU.setText();
        fechaU.setFont(new Font("Tahoma", Font.BOLD, 20));
        fechaU.setForeground(Color.WHITE);
        panel.add(fechaU);

@@ -11,7 +11,7 @@ import java.util.ArrayList;
 public class FrameSala extends JFrame implements ActionListener {
     private JPanel panel;
     private JButton silla, agregar, volver;
-    private JLabel sala;
+    private JLabel sala,seleccion;
     private ArrayList<JButton> sillas;
     private JComboBox Horario;
     private ImageIcon iconV = new ImageIcon("imagenes/SillaV.png");
@@ -48,6 +48,17 @@ public class FrameSala extends JFrame implements ActionListener {
         panel.add(iconLogo);
 
     }
+    private void error(){
+        seleccion= new JLabel();
+        seleccion.setBounds(300, 504, 20, 30);
+        seleccion.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        seleccion.setText("*");
+        seleccion.setFont(new Font("Tahoma", Font.BOLD, 30));
+        seleccion.setForeground(Color.red);
+        panel.add(seleccion);
+        System.out.println("Holi");
+
+    }
 
     private void colocarBotones() {
         sillas = new ArrayList<JButton>();
@@ -72,7 +83,8 @@ public class FrameSala extends JFrame implements ActionListener {
         panel.add(sala);
 
         Horario =new JComboBox();
-        Horario.setBounds(68, 500, 200, 30);
+        Horario.setBounds(90, 500, 200, 30);
+        Horario.addItem("Función");
         Horario.addItem("3:30 PM");
         Horario.addItem("5 PM");
         Horario.addItem("7 PM");
@@ -81,9 +93,11 @@ public class FrameSala extends JFrame implements ActionListener {
         Horario.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-            horario[0]=Horario.getSelectedItem().toString();
+                    horario[0]=Horario.getSelectedItem().toString();
             }
         });
+
+
 
 
 
@@ -129,9 +143,19 @@ public class FrameSala extends JFrame implements ActionListener {
                 if (sillas.get(j).getText() == "X") {
                     System.out.println(j);
                     FrameReciboBoletas frb = new FrameReciboBoletas();
-                    frb.setFuncion(horarioU);
-                    frb.recibo(cine.devolverIndice());
-                    frb.setVisible(true);
+
+                    if (horarioU==null){
+                        setVisible(false);
+                       error();
+                       setVisible(true);
+                    }
+                    else {
+
+                        frb.setFuncion(horarioU);
+                        frb.recibo(cine.devolverIndice());
+                        frb.setVisible(true);
+                    }
+
                 }
             }
         }

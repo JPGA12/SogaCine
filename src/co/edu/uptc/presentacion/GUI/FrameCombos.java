@@ -12,7 +12,7 @@ public class FrameCombos extends JFrame implements ActionListener {
 
     public FrameCombos(){
         setSize(400, 650);
-        setTitle("SogaCine");
+        setTitle("SogaCine");   
         setLocationRelativeTo(null);
         iniciarComponentes();
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
