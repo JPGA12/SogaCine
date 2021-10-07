@@ -17,7 +17,6 @@ public class DAOComida {
         for (int i = 0; i < datos.size(); i++) {
             Comida c = new Comida();
 
-            // Separo cada linea de datos en atributos
             String Linea[] = datos.get(i).split(",");
 
             c.setNombre(Linea[0]);

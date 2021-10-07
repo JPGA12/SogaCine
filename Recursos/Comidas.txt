@@ -1,3 +1,3 @@
 Combo Personal,10.000,1 Gaseosa,1 caja de palomitas,1 chocolatina;
-Combo Premium,30.000,2 Gaseosas,1 cajas de palomitas y 2 perros calientes,2 Snickers;
+Combo Duo,30.000,2 Gaseosas,1 cajas de palomitas y 2 perros calientes,2 Snickers;
 Combo Famiamigos,50.000,4 Gaseosas,1 caja de palomitas y 4 perros calientes,4 Milckyway;
