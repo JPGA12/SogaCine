@@ -138,25 +138,17 @@ public class FrameSala extends JFrame implements ActionListener {
         }
         if (evento.getSource() == agregar) {
             horarioU = horario[0];
-
-            for (int j = 0; j < sillas.size(); j++) {
-                if (sillas.get(j).getText() == "X") {
-                    System.out.println(j);
-                    FrameReciboBoletas frb = new FrameReciboBoletas();
-
-                    if (horarioU==null){
-                        setVisible(false);
-                       error();
-                       setVisible(true);
-                    }
-                    else {
-
-                        frb.setFuncion(horarioU);
-                        frb.recibo(cine.devolverIndice());
-                        frb.setVisible(true);
-                    }
-
-                }
+            FrameReciboBoletas frb = new FrameReciboBoletas();
+            if (horarioU==null){
+                setVisible(false);
+                error();
+                setVisible(true);
+            }
+            else {
+                frb.setFuncion(horarioU);
+                frb.recibo(cine.devolverIndice());
+                frb.setVisible(true);
+                dispose();
             }
         }
     }
