@@ -91,5 +91,9 @@ public class Cine {
         return index;
     }
 
+    private void asiganrsilla(int indice ){
+
+    }
+
 
 }

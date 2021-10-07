@@ -12,9 +12,8 @@ public class RunSogaCine {
 
 
     public static void main(String[] args) {
-//    frameInicio.setVisible(true);
-//        frameSala.setVisible(true);
+
        frameCartelera.setVisible(true);
-//        frameReciboBoletas.setVisible(true);
+
     }
 }

@@ -122,8 +122,6 @@ public class FrameSala extends JFrame implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent evento) {
 
-
-
             for (int i = 0; i < sillas.size(); i++) {
                 if (evento.getSource() == sillas.get(i)) {
                     sillas.get(i).setIcon(new ImageIcon(iconR.getImage().getScaledInstance(silla.getWidth(), silla.getHeight(), Image.SCALE_SMOOTH)));
@@ -148,7 +146,19 @@ public class FrameSala extends JFrame implements ActionListener {
                 frb.setFuncion(horarioU);
                 frb.recibo(cine.devolverIndice());
                 frb.setVisible(true);
-                dispose();
+//                dispose();
+                enviarEstadoSilla();
+            }
+        }
+    }
+
+    private void enviarEstadoSilla(){
+        for (int i = 0; i < sillas.size(); i++) {
+            if (sillas.get(i).getText()=="X"){
+                System.err.println(i+": Sillas rojas");
+            }
+            else {
+                System.out.println(i+": Sillas verdes");
             }
         }
     }
