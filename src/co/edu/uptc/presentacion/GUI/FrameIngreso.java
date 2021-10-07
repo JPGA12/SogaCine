@@ -99,6 +99,15 @@ public class FrameIngreso extends JFrame implements ActionListener {
                         FrameMenu frameMenu = new FrameMenu();
                         frameMenu.setVisible(true);
                         dispose();
+                        cine.guardarIndice(correo);
+                        System.out.println(cine.devolverIndice());
+                        int numero = cine.devolverIndice();
+
+                        FrameReciboBoletas frb = new FrameReciboBoletas();
+                        frb.recibo(numero);
+
+
+
 
                     }else {
                         JOptionPane.showMessageDialog(null, "Error: Contraseña Incorrecta" );

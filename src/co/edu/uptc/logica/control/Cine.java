@@ -9,6 +9,7 @@ public class Cine {
     private ArrayList<Persona> ListaPersonas;
     private ArrayList<Pelicula> ListaPelicula;
     private ArrayList<Comida> ListaComidas;
+    private int indice;
 
     public Cine(){
         ListaPersonas = new DAOPersonas().mostrarDatosPersonas();
@@ -72,5 +73,20 @@ public class Cine {
 
     public void setListaComidas(ArrayList<Comida> listaComidas) {
         ListaComidas = listaComidas;
+    }
+
+    public int guardarIndice(String correo){
+        indice = 0;
+        for (int i = 0; i < ListaPersonas.size(); i++) {
+            if (ListaPersonas.get(i).getEmail().equalsIgnoreCase(correo)){
+                indice = i;
+            }
+        }
+        return indice;
+    }
+
+    public int devolverIndice(){
+        int index = indice;
+        return index;
     }
 }

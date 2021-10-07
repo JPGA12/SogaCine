@@ -1,5 +1,7 @@
 package co.edu.uptc.presentacion.GUI;
 
+import co.edu.uptc.logica.control.Cine;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -13,6 +15,7 @@ public class FrameSala extends JFrame implements ActionListener {
         private ArrayList<JButton> sillas;
         private ImageIcon iconV = new ImageIcon("imagenes/SillaV.png");
         private ImageIcon iconR = new ImageIcon("imagenes/SillaR.png");
+        Cine cine  = new Cine();
 
     public FrameSala() {
         setSize(400, 650);
@@ -101,6 +104,10 @@ public class FrameSala extends JFrame implements ActionListener {
             for (int j = 0; j < sillas.size(); j++){
                 if (sillas.get(j).getText()=="X"){
                     System.out.println(j);
+                    FrameReciboBoletas frb = new FrameReciboBoletas();
+                    frb.recibo(cine.devolverIndice());
+                    frb.setVisible(true);
+//
                 }
             }
         }
