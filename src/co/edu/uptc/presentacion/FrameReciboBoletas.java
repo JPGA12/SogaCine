@@ -55,15 +55,6 @@ public class FrameReciboBoletas extends JFrame implements ActionListener {
     }
 
     private void EtiquetaComprador(int indice){
-
-        JLabel nombreP = new JLabel();
-        nombreP.setBounds(20, 120, 350, 35);
-        System.out.println(a);
-        nombreP.setText(cine.getListaPelicula().get(indice).getTitulo());
-        nombreP.setFont(new Font("Tahoma", Font.BOLD, 20));
-        nombreP.setForeground(Color.WHITE);
-        panel.add(nombreP);
-
         JLabel nombre = new JLabel();
         nombre.setBounds(20, 170, 350, 35);
         nombre.setText("Nombre del comprador:");

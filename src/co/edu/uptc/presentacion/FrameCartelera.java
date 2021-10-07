@@ -111,7 +111,7 @@ public class FrameCartelera extends JFrame implements ActionListener{
         if (e.getSource()==Boton4){
             FrameDescripcionPelicula frameDescripcionPelicula = new FrameDescripcionPelicula();
             frameDescripcionPelicula.pelicula(3);
-            c.ratata(3);
+
             frameDescripcionPelicula.setVisible(true);
             dispose();
         }

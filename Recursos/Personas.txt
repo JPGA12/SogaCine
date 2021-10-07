@@ -3,3 +3,6 @@ Juanito,Alimaña,321654987,a,a;
 Rey,Star,31258746958,ReyStar,Rey123;
 Javier,Ortiz,313789,jav123,hola123;
 Andres,Cepeda,1234567,andres1,hola;
+1,1,1,1,1;
+Camilo,Bohorquez,1234987,camilo123,camilo;
+2,2,2,2,2;

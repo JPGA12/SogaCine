@@ -11,7 +11,7 @@ public class Cine {
     private ArrayList<Pelicula> ListaPelicula;
     private ArrayList<Comida> ListaComidas;
     private ArrayList<Estrenos> ListaEstrenos;
-    private int indice, v;
+    private int indice;
     private String horarioF;
     private String sillas[] =new String[25];
 
@@ -99,59 +99,7 @@ public class Cine {
         return ListaEstrenos;
     }
 
-    public void ratata(int i){
-       v=i;
-    }
 
-    public int Row (){
-        return v;
-    }
-//    public String asientos(int i){
-//        sillas[0]="A1";
-//        sillas[1]="A2";
-//        sillas[2]="A3";
-//        sillas[3]="A4";
-//        sillas[4]="A5";
-//        sillas[5]="B1";
-//        sillas[6]="B2";
-//        sillas[7]="B3";
-//        sillas[8]="B4";
-//        sillas[9]="B5";
-//        sillas[10]="C1";
-//        sillas[11]="C2";
-//        sillas[12]="C3";
-//        sillas[13]="C4";
-//        sillas[14]="C5";
-//        sillas[15]="D1";
-//        sillas[16]="D2";
-//        sillas[17]="D3";
-//        sillas[18]="D4";
-//        sillas[19]="D5";
-//        sillas[20]="E1";
-//        sillas[21]="E2";
-//        sillas[22]="E3";
-//        sillas[23]="E4";
-//        sillas[24]="E5";
-//
-//        return sillas[i];
-//    }
 
-//    public void aaa(){
-//        for (int i = 0; i < sillas.length ;i++) {
-//            if (sillas[i]==1){
-//                sillas[i]=1;
-//            }else {
-//                sillas[i]=0;
-//            }
-//
-//        }
-//    }
 
-//    public void InicializarSillas(int indice, int a){
-//        sillas[indice]=a;
-//    }
-//
-//    public int SillaDisponible(int i){
-//        return sillas[i];
-//    }
 }
