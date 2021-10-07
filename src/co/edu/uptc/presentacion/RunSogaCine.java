@@ -9,12 +9,13 @@ public class RunSogaCine {
     static FrameDescripcionPelicula frameDescripcionPelicula = new FrameDescripcionPelicula();
     static FrameCartelera frameCartelera = new FrameCartelera();
     static FrameReciboBoletas frameReciboBoletas = new FrameReciboBoletas();
-
+    static FrameCombos frameCombos = new FrameCombos();
 
     public static void main(String[] args) {
 //    frameInicio.setVisible(true);
 //        frameSala.setVisible(true);
-       frameCartelera.setVisible(true);
+//       frameCartelera.setVisible(true);
 //        frameReciboBoletas.setVisible(true);
+        frameCombos.setVisible(true);
     }
 }
