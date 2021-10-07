@@ -101,7 +101,6 @@ public class FrameReciboBoletas extends JFrame implements ActionListener {
        sillasU.setBounds(20, 320, 350, 35);
        FrameSala fs=new FrameSala();
        sillasU.setText("Aca iran los puestos :(");
-//        sillasU.setText();
        sillasU.setFont(new Font("Tahoma", Font.BOLD, 20));
        sillasU.setForeground(Color.WHITE);
        panel.add(sillasU);

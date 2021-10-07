@@ -94,18 +94,14 @@ public class FrameIngreso extends JFrame implements ActionListener {
             else {
                 if(cine.VerificacionEmail(correo)!= null){
                     if (cine.VerificacionContra(contraseña)!=null){
-                        System.out.println("\n==== BIENVENIDO ====");
-                        System.out.println("Ingresando");
+
                         FrameMenu frameMenu = new FrameMenu();
                         frameMenu.setVisible(true);
                         dispose();
-                        cine.guardarIndice(correo);
-                        System.out.println(cine.devolverIndice());
-                        int numero = cine.devolverIndice();
-                        System.out.println(numero);
-
-                        FrameReciboBoletas frb = new FrameReciboBoletas();
-                        frb.recibo(numero);
+//                        cine.guardarIndice(correo);
+//                        int numero = cine.devolverIndice();
+//                        FrameReciboBoletas frb = new FrameReciboBoletas();
+//                        frb.recibo(numero);
 
                     }else {
                         JOptionPane.showMessageDialog(null, "Error: Contraseña Incorrecta" );
@@ -121,7 +117,7 @@ public class FrameIngreso extends JFrame implements ActionListener {
             FrameInicio frameInicio = new FrameInicio();
             frameInicio.setVisible(true);
             dispose();
-            System.out.println("Volviendo");
+
         }
     }
 }

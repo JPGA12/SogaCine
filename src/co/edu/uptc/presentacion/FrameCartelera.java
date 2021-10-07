@@ -86,18 +86,18 @@ public class FrameCartelera extends JFrame implements ActionListener{
     public void actionPerformed(ActionEvent e) {
         FrameReciboBoletas frameReciboBoletas = new FrameReciboBoletas();
         if (e.getSource()==Boton1){
-            System.out.println("BOTON1");
+
             FrameDescripcionPelicula frameDescripcionPelicula = new FrameDescripcionPelicula();
             frameDescripcionPelicula.pelicula(0);
-            frameReciboBoletas.recibo(0);
+//            frameReciboBoletas.recibo(0);
             frameDescripcionPelicula.setVisible(true);
             dispose();
         }
         if (e.getSource()==Boton2){
-            System.out.println("Boton2");
+
             FrameDescripcionPelicula frameDescripcionPelicula = new FrameDescripcionPelicula();
             frameDescripcionPelicula.pelicula(1);
-            c.ratata(1);
+
             frameDescripcionPelicula.setVisible(true);
             dispose();
         }

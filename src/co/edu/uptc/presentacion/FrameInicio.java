@@ -59,13 +59,13 @@ public class FrameInicio extends JFrame implements ActionListener {
             FrameIngreso frameIngreso = new FrameIngreso();
             frameIngreso.setVisible(true);
             dispose();
-            System.out.println("ingresandoooou");
+
         }
         if (e.getSource()==registro){
             FrameRegistrar frameRegistrar = new FrameRegistrar();
             frameRegistrar.setVisible(true);
             dispose();
-            System.out.println("registrando al perro");
+
         }
     }
 }
