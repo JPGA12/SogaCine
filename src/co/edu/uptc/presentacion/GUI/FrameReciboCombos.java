@@ -102,12 +102,27 @@ public class FrameReciboCombos extends JFrame implements ActionListener {
         snackU.setFont(new Font("Tahoma", Font.BOLD, 15));
         snackU.setForeground(Color.WHITE);
         panel.add(snackU);
+
+        JLabel codigo = new JLabel(new ImageIcon("imagenes/Barras.jpg"));
+        codigo.setBounds(20, 425, 350, 125);
+        panel.add(codigo);
+
+        volver = new JButton();
+        volver.setText("VOLVER");
+        volver.setFont(new Font("arial", Font.BOLD, 10));
+        volver.setBounds(220, 555, 90, 30);
+        volver.addActionListener(this);
+        panel.add(volver);
     }
 
 
     @Override
     public void actionPerformed(ActionEvent e) {
-
+        if (e.getSource()==volver){
+            FrameCombos fc =new FrameCombos();
+            fc.setVisible(true);
+            dispose();
+        }
     }
 
 }

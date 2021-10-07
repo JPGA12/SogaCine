@@ -1,11 +1,14 @@
 package co.edu.uptc.presentacion.GUI;
 
+import co.edu.uptc.logica.control.Cine;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
 public class FrameCartelera extends JFrame implements ActionListener{
 
+    Cine c = new Cine();
     private JPanel panel;
     private JButton Boton1, Boton2, Boton3, Boton4, volver;
 
@@ -81,10 +84,12 @@ public class FrameCartelera extends JFrame implements ActionListener{
 
     @Override
     public void actionPerformed(ActionEvent e) {
+        FrameReciboBoletas frameReciboBoletas = new FrameReciboBoletas();
         if (e.getSource()==Boton1){
             System.out.println("BOTON1");
             FrameDescripcionPelicula frameDescripcionPelicula = new FrameDescripcionPelicula();
             frameDescripcionPelicula.pelicula(0);
+            frameReciboBoletas.recibo(0);
             frameDescripcionPelicula.setVisible(true);
             dispose();
         }
@@ -92,21 +97,21 @@ public class FrameCartelera extends JFrame implements ActionListener{
             System.out.println("Boton2");
             FrameDescripcionPelicula frameDescripcionPelicula = new FrameDescripcionPelicula();
             frameDescripcionPelicula.pelicula(1);
+            c.ratata(1);
             frameDescripcionPelicula.setVisible(true);
             dispose();
         }
         if (e.getSource()==Boton3){
-            System.out.println("Boton3");
             FrameDescripcionPelicula frameDescripcionPelicula = new FrameDescripcionPelicula();
             frameDescripcionPelicula.pelicula(2);
+            frameReciboBoletas.recibo(2);
             frameDescripcionPelicula.setVisible(true);
             dispose();
         }
         if (e.getSource()==Boton4){
-            System.out.println("Boton4");
-            System.out.println("Boton3");
             FrameDescripcionPelicula frameDescripcionPelicula = new FrameDescripcionPelicula();
             frameDescripcionPelicula.pelicula(3);
+            c.ratata(3);
             frameDescripcionPelicula.setVisible(true);
             dispose();
         }

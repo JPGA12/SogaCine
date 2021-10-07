@@ -19,6 +19,7 @@ public class FrameSala extends JFrame implements ActionListener {
     Cine cine = new Cine();
     final String[] horario = new String[1];
     private String horarioU;
+    int s[][] = new int[5][5];
 
     public FrameSala() {
         setSize(400, 650);
@@ -62,6 +63,10 @@ public class FrameSala extends JFrame implements ActionListener {
 
     private void colocarBotones() {
         sillas = new ArrayList<JButton>();
+
+        //cine.aaa();
+
+
         for (int i = 0; i < 5; i++) {
             for (int j = 0; j < 5; j++) {
                 silla = new JButton();
@@ -71,6 +76,7 @@ public class FrameSala extends JFrame implements ActionListener {
                 silla.setBorder(BorderFactory.createLineBorder(Color.darkGray, 2, true));
                 silla.addActionListener(this);
                 sillas.add(silla);
+                s[i][j]=sillas.size();
             }
         }
 
@@ -97,10 +103,6 @@ public class FrameSala extends JFrame implements ActionListener {
             }
         });
 
-
-
-
-
         volver = new JButton();
         volver.setText("VOLVER");
         volver.setFont(new Font("arial", Font.BOLD, 10));
@@ -115,9 +117,7 @@ public class FrameSala extends JFrame implements ActionListener {
         agregar.addActionListener(this);
         panel.add(agregar);
 
-
     }
-
 
     @Override
     public void actionPerformed(ActionEvent evento) {
@@ -146,22 +146,17 @@ public class FrameSala extends JFrame implements ActionListener {
                 frb.setFuncion(horarioU);
                 frb.recibo(cine.devolverIndice());
                 frb.setVisible(true);
-//                dispose();
-                enviarEstadoSilla();
+                dispose();
+
             }
         }
     }
 
-    private void enviarEstadoSilla(){
-        for (int i = 0; i < sillas.size(); i++) {
-            if (sillas.get(i).getText()=="X"){
-                System.err.println(i+": Sillas rojas");
-            }
-            else {
-                System.out.println(i+": Sillas verdes");
-            }
-        }
+    public ArrayList<JButton> getSillas() {
+        return sillas;
     }
+
+
 
 }
 

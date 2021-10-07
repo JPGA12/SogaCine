@@ -1,5 +1,6 @@
 package co.edu.uptc.persistencia;
 
+import co.edu.uptc.logica.modelo.Estrenos;
 import co.edu.uptc.logica.modelo.Pelicula;
 import co.edu.uptc.logica.modelo.Persona;
 import co.edu.uptc.utilidades.Archivo;
@@ -31,13 +32,13 @@ public class DAOPeliculas {
 
     }
 
-    public ArrayList<Pelicula> mostrarDatosEstrenos() {
+    public ArrayList<Estrenos> mostrarDatosEstrenos() {
         // Obtener conetenido de mi archivo plano
         ArrayList<String> datos = new Archivo().ContenidoArchivo("Recursos/Estrenos.txt");
-        ArrayList<Pelicula> listadoPeliculas= new ArrayList<Pelicula>();
+        ArrayList<Estrenos> listadoPeliculas= new ArrayList<Estrenos>();
 
         for (int i = 0; i < datos.size(); i++) {
-            Pelicula p = new Pelicula();
+            Estrenos p = new Estrenos();
 
             // Separo cada linea de datos en atributos
             String Linea[] = datos.get(i).split(",");

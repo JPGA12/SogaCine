@@ -107,9 +107,6 @@ public class FrameIngreso extends JFrame implements ActionListener {
                         FrameReciboBoletas frb = new FrameReciboBoletas();
                         frb.recibo(numero);
 
-
-
-
                     }else {
                         JOptionPane.showMessageDialog(null, "Error: Contraseña Incorrecta" );
                         System.err.println("Error: Contraseña Incorrecta");

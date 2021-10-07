@@ -43,7 +43,7 @@ public class FrameEstrenos extends JFrame implements ActionListener{
 
         Boton1 = new JButton();
         Boton1.setBounds(40,155,150,200);
-        ImageIcon icon1 = new ImageIcon("imagenes/Proximos1.png");
+        ImageIcon icon1 = new ImageIcon("imagenes/Proximos1.jpg");
         Boton1.setIcon(new ImageIcon(icon1.getImage().getScaledInstance(Boton1.getWidth(), Boton1.getHeight(),Image.SCALE_SMOOTH)));
         Boton1.setBorder(BorderFactory.createLineBorder(Color.darkGray, 2, true));
         Boton1.addActionListener(this);
@@ -83,17 +83,26 @@ public class FrameEstrenos extends JFrame implements ActionListener{
 
     @Override
     public void actionPerformed(ActionEvent e) {
+        FrameDescripcionEstreno frameDescripcionEstreno = new FrameDescripcionEstreno();
         if (e.getSource()==Boton1){
-            JOptionPane.showMessageDialog(null, "A nivel mundial se estrena el:\n11 de marzo de 2022");
+            frameDescripcionEstreno.pelicula(0);
+            frameDescripcionEstreno.setVisible(true);
+            dispose();
         }
         if (e.getSource()==Boton2){
-            JOptionPane.showMessageDialog(null, "A nivel mundial se estrena el:\n4 de febrero de 2022");
+            frameDescripcionEstreno.pelicula(1);
+            frameDescripcionEstreno.setVisible(true);
+            dispose();
         }
         if (e.getSource()==Boton3){
-            JOptionPane.showMessageDialog(null, "A nivel mundial se estrena el:\n17 de diciembre de 2021");
+            frameDescripcionEstreno.pelicula(2);
+            frameDescripcionEstreno.setVisible(true);
+            dispose();
         }
         if (e.getSource()==Boton4){
-            JOptionPane.showMessageDialog(null, "A nivel mundial se estrena el:\n15 de octubre de 2021");
+            frameDescripcionEstreno.pelicula(3);
+            frameDescripcionEstreno.setVisible(true);
+            dispose();
         }
         if (e.getSource()==volver){
             FrameMenu frameMenu = new FrameMenu();

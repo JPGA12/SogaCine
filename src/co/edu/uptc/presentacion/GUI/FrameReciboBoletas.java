@@ -9,9 +9,10 @@ import java.awt.event.ActionListener;
 
 public class FrameReciboBoletas extends JFrame implements ActionListener {
     private JPanel panel;
-    private JButton ingresar, volver;
+    private JButton volver, combos;
     Cine cine = new Cine();
     private String funcion;
+    private int a;
 
 
 
@@ -51,9 +52,17 @@ public class FrameReciboBoletas extends JFrame implements ActionListener {
         titulo.setForeground(Color.WHITE);
         panel.add(titulo);
 
-
     }
+
     private void EtiquetaComprador(int indice){
+
+        JLabel nombreP = new JLabel();
+        nombreP.setBounds(20, 120, 350, 35);
+        System.out.println(a);
+        nombreP.setText(cine.getListaPelicula().get(indice).getTitulo());
+        nombreP.setFont(new Font("Tahoma", Font.BOLD, 20));
+        nombreP.setForeground(Color.WHITE);
+        panel.add(nombreP);
 
         JLabel nombre = new JLabel();
         nombre.setBounds(20, 170, 350, 35);
@@ -90,7 +99,8 @@ public class FrameReciboBoletas extends JFrame implements ActionListener {
        panel.add(sillas);
        JLabel sillasU = new JLabel();
        sillasU.setBounds(20, 320, 350, 35);
-       sillasU.setText("sillas");
+       FrameSala fs=new FrameSala();
+       sillasU.setText("Aca iran los puestos :(");
 //        sillasU.setText();
        sillasU.setFont(new Font("Tahoma", Font.BOLD, 20));
        sillasU.setForeground(Color.WHITE);
@@ -108,15 +118,35 @@ public class FrameReciboBoletas extends JFrame implements ActionListener {
        fechaU.setFont(new Font("Tahoma", Font.BOLD, 20));
        fechaU.setForeground(Color.WHITE);
        panel.add(fechaU);
+
+        volver = new JButton();
+        volver.setText("VOLVER");
+        volver.setFont(new Font("arial", Font.BOLD, 10));
+        volver.setBounds(220, 550, 90, 30);
+        volver.addActionListener(this);
+        panel.add(volver);
+
+        combos = new JButton();
+        combos.setText("VER COMBOS");
+        combos.setFont(new Font("arial", Font.BOLD, 10));
+        combos.setBounds(50, 550, 150, 30);
+        combos.addActionListener(this);
+        panel.add(combos);
     }
 
 
     @Override
     public void actionPerformed(ActionEvent e) {
-
-    }
-    public String getFuncion() {
-        return funcion;
+        if (e.getSource()==volver){
+            FrameSala frameSala = new FrameSala();
+            frameSala.setVisible(true);
+            dispose();
+        }
+        if (e.getSource()==combos){
+            FrameCombos frameCombos = new FrameCombos();
+            frameCombos.setVisible(true);
+            dispose();
+        }
     }
 
     public void setFuncion(String funcion) {
